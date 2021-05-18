@@ -1,4 +1,4 @@
-**sos Save Our Soul**
+**Save Our Soul (sos)**
 
 sos is a part of PhoenixOS Spectre Edition which helps to improve system Performance.
 
