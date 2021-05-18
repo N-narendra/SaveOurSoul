@@ -20,6 +20,7 @@ sos is made of bash scripts with special Feature for system configuration.
 
 1) Patch initrd and ramdisk.
 2) Ncurses libs & (Dialog binary in /system/bin)
+3) Figlet binary with fonts in share folder (figlet binary in /system/bin).
 
 **Credits:-**
 1] Special Thanks To PhoenixOS & PrimeOS Team and Android X86.
