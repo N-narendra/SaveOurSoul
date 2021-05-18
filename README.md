@@ -28,8 +28,8 @@ sos is made of bash scripts with special Feature for system configuration.
 3) ncurses :- https://github.com/ThomasDickey/ncurses-snapshots
 4) dialog :- https://github.com/ThomasDickey/dialog-snapshots
 5) figlet :- http://www.figlet.org/
-6) lolcat :- https://github.com/jaseg/lolcat in C source
-https://github.com/busyloop/lolcat.
+6) lolcat :- https://github.com/jaseg/lolcat in C source.
+https://github.com/busyloop/lolcat in ruby source.
 
 
 **Credits:-**
