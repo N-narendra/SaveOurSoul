@@ -22,7 +22,9 @@ sos is made of bash scripts with special Feature for system configuration.
 2) Ncurses libs & (Dialog binary in /system/bin)
 3) Figlet binary with fonts in share folder (figlet binary in /system/bin).
 
-**Special Thanks And links**
+**Special Thanks And links:- **
+rsync :- https://rsync.samba.org/
+bash :- https://www.gnu.org/software/bash/
 ncurses :- https://github.com/ThomasDickey/ncurses-snapshots
 dialog :- https://github.com/ThomasDickey/dialog-snapshots
 figlet :- http://www.figlet.org/
