@@ -1,6 +1,6 @@
 **Save Our Soul (sos)**
 
-sos is a part of PhoenixOS Spectre Edition which helps to improve system Performance.
+sos is a part of PhoenixOS Spectre Edition.
 
 sos is made of bash scripts with special Feature for system configuration.
 
