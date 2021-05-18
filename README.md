@@ -22,21 +22,21 @@ sos is made of bash scripts with special Feature for system configuration.
 2) Ncurses libs & (Dialog binary in /system/bin)
 3) Figlet binary with fonts in share folder (figlet binary in /system/bin).
 
-**Special Thanks And links:- **
-rsync :- https://rsync.samba.org/
-bash :- https://www.gnu.org/software/bash/
-ncurses :- https://github.com/ThomasDickey/ncurses-snapshots
-dialog :- https://github.com/ThomasDickey/dialog-snapshots
-figlet :- http://www.figlet.org/
-lolcat :- https://github.com/jaseg/lolcat in C source
-https://github.com/busyloop/lolcat
+**Special Thanks And links:-**
+1) rsync :- https://rsync.samba.org/
+2) bash :- https://www.gnu.org/software/bash/
+3) ncurses :- https://github.com/ThomasDickey/ncurses-snapshots
+4) dialog :- https://github.com/ThomasDickey/dialog-snapshots
+5) figlet :- http://www.figlet.org/
+6) lolcat :- https://github.com/jaseg/lolcat in C source
+https://github.com/busyloop/lolcat.
 
 
 **Credits:-**
-1] Special Thanks To PhoenixOS & PrimeOS Team and Android X86.
-2] SOS Coded By Narendra,Spectre & Daksh.
-3] Kernel,Mesa,Extreme Mode Etc...  Done By Spectre. 
-4] Thanks To ICY Where TO Contribute with his compiled Mesa and Kernel.
+1) Special Thanks To PhoenixOS & PrimeOS Team and Android X86.
+2) SOS Coded By Narendra,Spectre & Daksh.
+3) Kernel,Mesa,Extreme Mode Etc...  Done By Spectre. 
+4) Thanks To ICY Where TO Contribute with his compiled Mesa and Kernel.
 
 Thanks to all GhostXofficial Members for the Support.! 
  
