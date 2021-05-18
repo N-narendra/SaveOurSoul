@@ -22,6 +22,14 @@ sos is made of bash scripts with special Feature for system configuration.
 2) Ncurses libs & (Dialog binary in /system/bin)
 3) Figlet binary with fonts in share folder (figlet binary in /system/bin).
 
+**Special Thanks And links**
+ncurses :- https://github.com/ThomasDickey/ncurses-snapshots
+dialog :- https://github.com/ThomasDickey/dialog-snapshots
+figlet :- http://www.figlet.org/
+lolcat :- https://github.com/jaseg/lolcat in C source
+https://github.com/busyloop/lolcat
+
+
 **Credits:-**
 1] Special Thanks To PhoenixOS & PrimeOS Team and Android X86.
 2] SOS Coded By Narendra,Spectre & Daksh.
