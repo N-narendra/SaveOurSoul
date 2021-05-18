@@ -1,0 +1,20 @@
+#!/system/bin/bash 
+center "Welcome"
+cout "USB Enabled..!"
+center "Heheboi"
+sleep 2
+ifconfig eth0 down 
+sleep 0.1
+ifconfig eth1 down
+sleep 0.1
+ip link set eth0 name eth_bak
+sleep 0.1
+ip link set eth1 name eth0
+sleep 0.1
+ifconfig eth0 up
+sleep 0.1 
+echo 
+cout "Heheboi..!"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+echo
+cout "Press Alt+f7 TO close Terminal..!"

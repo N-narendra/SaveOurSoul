@@ -1,0 +1,116 @@
+#!/system/bin/bash 
+C1="\e[31;1m"
+C2="\e[32;1m"
+C3="\e[33;1m"
+C4="\e[34;1m"
+C5="\e[35;1m"
+C6="\e[36;1m"
+CD="\e[0m"
+mesa(){
+if [ -e /data/media/0/ghost/*.ght ]; then
+cout "${C2}[ MESA DRIVER FOUND.....! ] ${CD}${CN}"
+cout "${C3}[ INSTALLATION STARTED...! ] ${CD}${CN}"
+cout "${C3}[ DECOMPRESSING...! ] ${CD}${CN}"
+cd /data/media/0/ghost/
+mv *.ght Mesa.ght 
+cd /data/media/0/ghost/
+7z x Mesa.ght >/dev/null 2>&1
+find /data/media/0/ghost -type d -exec chmod 755 {} \;
+find /data/media/0/ghost/lib -type f -exec chmod 644 {} \;
+find /data/media/0/ghost/lib64 -type f -exec chmod 644 {} \;
+find /data/media/0/ghost/vendor -type f -exec chmod 644 {} \;
+if [ -d /data/media/0/ghost/usr ]; then
+find /data/media/0/ghost/usr -type f -exec chmod 644 {} \;
+fi
+cout "${C3}[ DECOMPRESSION PROCESS COMPLETED SUCCESSFULLY ]  ${CD}${CN}"
+else
+cout "\e[98;1m[ MESA DRIVER NOT FOUND, PUT Mesa<versioncode>.ght INSIDE ghost ; Error 69 ]${CD}${CN}"
+fi
+cd /data/media/0/ghost
+B=/data/media/0/ghost/lib64
+if [ -d "$B" ]; then
+cout "${C2} DOWNLOAD SOURCE IS CORRECT! ${CD}${CN}"
+cout "${C6}[ Changing MESA...PLEASE WAIT ]${CD}${CN}"
+rsync -aq /data/media/0/ghost/lib/* /system/lib/
+rsync -aq /data/media/0/ghost/vendor/etc /system/vendor/ 
+rsync -aq /data/media/0/ghost/vendor/lib/* /system/vendor/lib/ 
+rsync -aq /data/media/0/ghost/vendor/lib64/* /system/vendor/lib64/ 
+rsync -aq /data/media/0/ghost/lib64/* /system/lib64/
+if [ -d /data/media/0/ghost/usr ]; then
+rsync -aq /data/media/0/ghost/usr /system/
+fi
+cd /storage/emulated/0/ghost
+rm -f *.ght
+find /data/media/0/ghost -type d -exec chmod 777 {} \;
+find /data/media/0/ghost/lib -type f -exec chmod 777 {} \;
+find /data/media/0/ghost/lib64 -type f -exec chmod 777 {} \;
+find /data/media/0/ghost/vendor -type f -exec chmod 777 {} \;
+cd /storage/emulated/0/ghost
+rm -rf lib lib64 vendor usr
+rsync -aq /system/media/audio/ui/.nab/sos/lib/audio.r_submix.default.so /system/lib/hw/ > /dev/null 2>&1 
+rsync -aq /system/media/audio/ui/.nab/sos/lib64/audio.r_submix.default.so /system/lib64/hw/ > /dev/null 2>&1
+cout "${C2}[ HeHe Boi ]${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C6}[ IT NEEDS ABOVE 5 MINUTES FOR NEXT RESTART, PLEASE BE PATIENT ]${CD}${CN}"
+rm -rf /data/dalvik-cache/*
+sleep 3
+sec=5
+while [ $sec -ge 0 ]; do
+echo -ne "\e[33;1mRebooting in:-\e[91;1m $sec \e[0m\033[0K\r"
+let "sec=sec-1"
+sleep 1
+done
+reboot
+else
+cout "${C1}[ MESA DRIVER SOURCE IS DIFFERENT, CAN'T UPDATE, PLEASE DOWNLOAD FROM LINKS PROVIDED IN PFX-SE ; Error 69 ]${CD}${CN}"
+cd /storage/emulated/0/ghost
+rm -f *.ght
+cd /storage/emulated/0/ghost
+rm -rf lib lib64 vendor usr
+fi    
+}
+ini()
+{
+center "Welcome"
+logo "Mesa-Changer"
+center "Heheboi" 
+echo 
+cout "${C2}[ SCRIPT MADE BY SPECTRE  ]${CD}${CN}"
+cout "${C3}[ THIS SCRIPT IS USED TO CHANGE MESA DRIVERS ]${CD}${CN}"
+cout "${C4}[ NOTE: PLEASE MAKE SURE THERE IS ONLY .ght MESA IN ghost FOLDER AND NO OTHER PERSONAL FILES ]${CD}${CN}"
+cout "${C2}[ THIS SCRIPT WORKS ONLY IN PHoenixOS ghost AND ONLY GIVEN .ght EXTENTIONS ARE SUPPORTED ]${CD}${CN}"
+cout "${C4}[ TO GET LINKS FOR SUPPORTED MESA DRIVERS PLEASE CHECK OUR WEBSITE ]${CD}${CN}"
+cout "${C3} PRESS ANY KEY TO CONTINUE ]  ${CD}${CN}"
+read 
+clear  
+cli 
+}
+cli(){
+cout "${C3} [1] Upgrade Mesa.${CD}${CN}"
+cout "${C4} [2] Return To Main-Menu.${CD}${CN}"
+cout "${C1} [3] Exit.${CD}${CN}"
+echo -e "\e[93;1m"
+read -p "Enter The Option Here:- " c 
+echo -e "\e[0m"
+clear 
+case $c in
+1)
+mesa
+;;
+2)
+bash /system/script/menu 
+;;
+3)
+exit 
+;;
+*)
+clear
+cout "${C3}Ah Boi Here We Go Again.....${CD}${CN}"
+sleep 0.5
+clear
+cli   
+;;
+esac
+}
+clear
+ini

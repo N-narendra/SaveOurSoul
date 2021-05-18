@@ -1,0 +1,78 @@
+#!/system/bin/bash 
+timer()
+{
+echo -e "\e[92;1m Your Choice is Power-off by timer. \e[0m"
+echo -e "\e[94;1m"
+read -p "Enter The Hour for shutdown...?(No need type 0):- " h
+echo -e "\e[0m"
+echo -e "\e[93;1m"
+read -p "Enter The Mintues..?(No need type 0):- " m
+echo -e "\e[0m"
+echo -e "\e[95;1mThe Seconds...(By Default 60)\e[0m"
+echo 
+echo -e "\e[93;1mPress Enter To Start.....\e[0m"
+read 
+clear 
+echo -e "\e[96;1m[ Your Timer is "$h"H:"$m"M:60S For ShutDown Your OS.....! ]\e[0m"
+echo 
+cout "\e[93;1m[ This Helps while You Where kept large file to download And Going Outside So This Will help To Auto-Shutdown.\e[0m"
+echo 
+cout "\e[91;1m[ To Cancle This Timer Press Ctrl+C ]\e[0m"
+echo 
+echo -e "\e[96;1m"
+hour=$h
+min=$m
+sec=60
+        while [ $hour -ge 0 ]; do
+                 while [ $min -ge 0 ]; do
+                         while [ $sec -ge 0 ]; do
+                                 echo -ne "\e[96;1mTimer For ShutDown:-\e[33;1m[ $hour:$min:$sec ]\e[0m \033[0K\r"
+                                 let "sec=sec-1"
+                                 sleep 1
+                         done
+                         sec=59
+                         let "min=min-1"
+                 done
+                 min=59
+                 let "hour=hour-1"
+         done
+echo -e "\e[0m"
+echo 
+cout "Your OS Going To Turn-Off Soon...."
+sleep 0.5
+sync
+sleep 0.5
+poweroff    
+}
+cli(){
+center "Heheboi"
+logo "PowerOff"
+center "Welcome"
+cout "Auto-Poweroff By Timer."
+cout "Made by Narendra From Ghost Officail."
+cout " [1] Power-off by Timer."
+cout " [2] Return To Main-menu." 
+cout " [3] Exit." 
+echo -e "\e[93;1m "
+read -p "Enter the Option:- " c 
+echo -e "\e[0m"
+clear
+case $c in
+1)
+timer 
+;;
+2)
+bash /system/script/menu
+;;
+3)
+exit
+;;
+*)
+cout "Ah Boi Here We Go Again..."
+sleep 1
+clear
+cli
+;;
+esac     
+}
+cli

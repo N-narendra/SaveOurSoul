@@ -1,0 +1,95 @@
+#!/system/bin/bash 
+C1="\e[31;1m"
+C2="\e[32;1m"
+C3="\e[33;1m"
+C4="\e[34;1m"
+C5="\e[35;1m"
+C6="\e[36;1m"
+CD="\e[0m"
+file=$(date +%T)
+gr(){
+    if [ -n /sdcard/sosrecoder ]; then
+    mkdir /sdcard/sosrecoder > /dev/null 2>&1 
+    fi 
+}
+recoder(){
+gr
+center "Welcome"
+logo "Ghost-Recoder"
+center "Heheboi"
+echo 
+cout "${C3}Ghost recoder..!${CN}${CD}"
+cout "${C2}1] Start-Recoder.!${CN}${CD}"
+cout "${C5}2] Return To Main Menu.!${CN}${CD}"
+cout "${C1}3] Exit.!${CN}${CD}"
+echo -e "\e[93;1m"
+read -p "Enter Your Choice >> " c
+echo -e "\e[0m"
+case $c in 
+1)
+cout "${C3}Select Your Resoluion..!${CN}${CD}" 
+cout "${C2}1] 1080p .${CN}${CD}"
+cout "${C3}2] 720p .${CN}${CD}"
+cout "${C4}3] 480p .${CN}${CD}"
+cout "${C5}4] 360p .${CN}${CD}"
+cout "${C2}5]Custom Resolution. ${CN}${CD}"
+echo -e "\e[93;1m"
+read -p "Enter Option Here >> " c 
+echo -e "\e[0m"
+case $c in 
+1)
+clear 
+cout "${C2}Recodring At 1080p ${CN}${CD}"
+cout "${C6}To Stop Press ctrl+c And it will saved in sosrecoder..!${CN}${CD}"
+screenrecord --size 1920x1080 /sdcard/sosrecoder/SosRecoder_$file.mp4 >> /dev/null 2>&1 
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C2}Saved In SosRecoder${CN}${CD}"
+;;
+2)
+clear
+cout "${C2}Recodring At 720p${CN}${CD}"
+cout "${C6}To Stop Press ctrl+c And it will saved in sosrecoder..!${CN}${CD}"
+screenrecord --size 1280x720 /sdcard/sosrecoder/SosRecoder_$file.mp4 >> /dev/null 2>&1 
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C2}Saved In SosRecoder${CN}${CD}"
+;;
+3)
+clear
+cout "${C2}Recodring At 480p${CN}${CD}"
+cout "${C6}To Stop Press ctrl+c And it will saved in sosrecoder..!${CN}${CD}"
+screenrecord --size 854x480 /sdcard/sosrecoder/SosRecoder_$file.mp4 >> /dev/null 2>&1 
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C2}Saved In SosRecoder${CN}${CD}"
+;;
+4)
+clear
+cout "${C2}Recodring At 360p ${CN}${CD}"
+cout "${C6}To Stop Press ctrl+c And it will saved in sosrecoder..!${CN}${CD}"
+screenrecord --size 640x360 /sdcard/sosrecoder/SosRecoder_$file.mp4 >> /dev/null 2>&1 
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C2}Saved In SosRecoder${CN}${CD}"
+;;
+5)
+clear
+echo -e "\e[93;1m"
+read -p "Enter Resolution:-(example:- 1080x720 ) " res 
+echo -e "\e[0m"
+cout "${C2}Recodring At $res ${CN}${CD}"
+cout "${C6}To Stop Press ctrl+c And it will saved in sosrecoder..!${CN}${CD}"
+screenrecord --size $res  /sdcard/sosrecoder/SosRecoder_$file.mp4 >> /dev/null 2>&1 
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C2}Saved In SosRecoder${CN}${CD}"
+;;
+esac ;;
+2)
+bash /system/script/menu ;;
+3)
+exit ;;
+*)
+cout "${C3}Ah Boi Here We Go Again...!${CN}${CD}"
+sleep 2
+clear 
+recoder ;;
+esac
+}
+recoder

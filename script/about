@@ -1,0 +1,35 @@
+#!/system/bin/bash 
+echo -e "\e[93;1;3mWelcome To PhoenixOS Spectre Edition....!\n\e[0m"
+echo -e "\e[96;3;1m"
+cat << "EOT"
+"PhoenixOS Spectre Edition" is a modified version of PhoenixOS
+This is going to be the last release by GhostXOfficial Team
+PrimeOS is an Android-X86 based OS and It is Designed For Gaming and Other daily Usage.!
+Later PrimeOS Team Discontinued on their Project..! 
+
+We Bring you, Spectre Edition, A Modified version of PhoenixOS build...!
+Hopefully to bring better Compatibility and User experience...!
+
+Features:- 
+1] Sos (save our soul):- It's a Masterscript based on bash shell to bring useful functionalities and some tweaks.
+2] Extreme Mode:- To Fake Gpu For Games to unlock inaccessible Graphics settings and Tweak as the user needs (Based on Gltoools)
+3] ScreenRecoder(CLI):- To Record Screen in sos (Game-Center)..!
+4] Kernel & Mesa changer To Improve Performance and compatibility..!
+5] Auto-Poweroff by Timer(sos) To Shutdown OS by Timer.!
+6] Many more Features to be discovered in Sos ( TO Enter SOS Press Alt+f1 Or ALt+fn+f1 And type sos , hit enter...!).
+
+Credits:-
+1] Special Thanks To PhoenixOS & PrimeOS Team and Android X86.
+2] SOS Coded By Narendra,Spectre & Daksh.
+3] Kernel,Mesa,Extreme Mode Etc...  Done By Spectre.
+4] Thanks To ICY Where TO Contribute with his compiled Mesa and Kernel.
+
+
+Thanks to all GhostXofficial Members for the Support.! 
+
+Peace Out..! Stay Happy..!
+EOT
+echo -e "\e[0m"
+echo -e "\e[93;1mPress Enter For Main Menu..!\e[0m"
+read
+bash /system/script/menu 

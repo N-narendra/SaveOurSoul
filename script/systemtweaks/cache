@@ -1,0 +1,74 @@
+#!/system/bin/bash
+C1="\e[31;1m"
+C2="\e[32;1m"
+C3="\e[33;1m"
+C4="\e[34;1m"
+C5="\e[35;1m"
+C6="\e[36;1m"
+CD="\e[0m"
+dalvik(){
+cout "${C6}[ CLEARING DALVIK CACHE ]${CD}${CN}"
+cout "${C6}[ IT NEEDS ABOVE 5 MINUTES FOR NEXT RESTART, PLEASE BE PATIENT ]${CD}${CN}"
+rm -rf /data/dalvik-cache/*
+sleep 3
+cout "${C3}[ HeHe Boi ]${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+sec=3
+while [ $sec -ge 0 ]; do
+echo -ne "\e[33;1mRebooting in:-\e[91;1m $sec \e[0m\033[0K\r"
+let "sec=sec-1"
+sleep 1
+done
+reboot    
+}
+cache(){
+cout "${C1}[ CLEARING APP CACHE ]${CD}${CN}"
+cd /data/data
+find . -name cache -type d -exec rm -rf {} +
+cd /data/media/0/Android/data
+find . -name cache -type d -exec rm -rf {} +
+sleep 3
+cout "${C2}[ HeHe Boi ]${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C3}[ Press ALT+F7 or ALT+FN+F7 to Exit ]${CD}${CN}"
+}
+cli(){
+center "Welcome"
+logo "Clear-Cache/Dalvik"
+center "Heheboi" 
+echo 
+cout "${C2}[ MADE BY SPECTRE ]${CD}${CN}"
+cout "${C3}[ THIS SCRIPT IS USED TO CLEAR CACHE  ]${CD}${CN}"
+cout "${C2}[ CAUTION: DONT USE THIS SCRIPT UNNECESSARILY , USE ONLY WHEN YOUR SYSTEM BECAME EXTREMELY LAGGY ]${CD}${CN}"
+cout "${C2}[ Select the options below ]${CD}${CN}"
+cout "${C3} [1] CLEAR DALVIK CACHE  ${CD}${CN}"
+cout "${C4} [2] CLEAR APP CACHE ${CD}${CN}"
+cout "${C5} [3] Return To Main Menu.${CD}${CN}"
+cout "${C1} [4] Exir.${CD}${CN}"
+echo -e "\e[93;1m"
+read -p "Enter The Option:- " c 
+echo -e "\e[0m"
+clear
+case $c in
+1)
+dalvik
+;;
+2)
+cache
+;;
+3)
+bash /system/script/menu
+;;
+4)
+exit 
+;;
+*)
+cout "${C3}Ah Boi Here We Go Again....${CD}${CN}"
+sleep 1
+clear 
+cli 
+;;
+esac    
+}
+clear
+cli

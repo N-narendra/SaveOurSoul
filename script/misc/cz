@@ -1,0 +1,46 @@
+#!/system/bin/bash
+center "Welcome"
+logo "CZFM"
+center "Heheboi"
+echo 
+cout "[ MADE BY SPECTRE. ]"
+cout "[ THIS SCRIPT IS USED TO SWITCH BETWEEN TABLET AND DESKTOP MODE. ]"
+cout "[ Select the options below ]"
+cout " [1] Desktop Mode."
+cout " [2] Tablet Mode."
+read c
+clear
+case $c in
+1)
+cout "[ DISABLING CZFM ]"
+if [ -d /system/app/FileManager ]; then
+mkdir /system/.cz
+mv /system/app/FileManager /system/.cz
+cout "[ HeHe Boi ]"
+sec=3
+while [ $sec -ge 0 ]; do
+echo -ne "\e[33;1mRebooting in:-\e[91;1m $sec \e[0m\033[0K\r"
+let "sec=sec-1"
+sleep 1
+done
+reboot
+else
+cout "[ CZFM IS ALREADY DISABLED ]"
+fi
+;;
+2)
+cout "[ ENABLING CZFM ]"
+mv /system/.cz/FileManager /system/app
+rmdir /system/.cz
+sleep 3
+cout "[ HeHe Boi ]"
+alsa_aplay /system/spectre/etc/done.sos > /dev/null 2>&1
+sec=3
+while [ $sec -ge 0 ]; do
+echo -ne "\e[33;1mRebooting in:-\e[91;1m $sec \e[0m\033[0K\r"
+let "sec=sec-1"
+sleep 1
+done
+reboot
+;;
+esac

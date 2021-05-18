@@ -1,0 +1,78 @@
+#!/system/bin/bash
+sleep 0.5 
+clear
+echo -e "\e[96;1m"
+cat << "EOF"
+
+
+
+
+
+                         ________.__                    __ ____  ___________   _____  _____.__              .__.__   
+                        /  _____/|  |__   ____  _______/  |\   \/  /\_____  \_/ ____\/ ____\__| ____ _____  |__|  |  
+                       /   \  ___|  |  \ /  _ \/  ___/\   __\     /  /   |   \   __\\   __\|  |/ ___\\__  \ |  |  |  
+                       \    \_\  \   Y  (  <_> )___ \  |  | /     \ /    |    \  |   |  |  |  \  \___ / __ \|  |  |__
+                        \______  /___|  /\____/____  > |__|/___/\  \\_______  /__|   |__|  |__|\___  >____  /__|____/
+                               \/     \/           \/            \_/        \/                     \/     \/         
+
+                                              SOS Created By Team GhostXofficail.
+
+
+
+EOF
+echo -e "\e[0m"
+R=$(echo $((1 + $RANDOM % 24)))
+case $R in 
+1) 
+echo -e "\e[93;1m==================================>>\e[92;96m Tip:- If You Want To Unlock Graphics And Tweaks In Games Try Out Extreme Mode..! \e[0m" ;;
+2)
+echo -e "\e[94;1m==================================>>\e[92m Tip:- Always Remember To Use Ext4 And Use Img2Folder For Better Performance...!\e[0m" ;;
+3)
+echo -e "\e[95;1m==================================>>\e[92m Tip:- When You Going To Upgrade Mesa/Kernel In Ntfs Partition Do Re-size System.img To Give More Space To The System.img...!\e[0m" ;;
+4)
+echo -e "\e[96;1m==================================>>\e[92m Tip:- If Your Ethernet Not Detected Please Do Usb fix In Misc function..! \e[0m" ;;
+5)
+echo -e "\e[91;1m==================================>>\e[92m Tip:- If You Dont Like G-Apps Disable Them In Misc function..!\e[0m" ;;
+6)
+echo -e "\e[92;1m==================================>>\e[92m Tip:- If You Want To Record Screen Go To Game-Center.!\e[0m" ;;
+7)
+echo -e "\e[95;1m==================================>>\e[92m Tip:- You Can Re-Size Your Data.img In Misc function...!\e[0m" ;;
+83)
+echo -e "\e[93;1m==================================>>\e[92m Tip:- If You're A Magisk Lover Then Switch Your Root In System-Tweaks..!\e[0m" ;;
+9) 
+echo -e "\e[92;1m==================================>>\e[92m Tip:- If You Want To Clear-Cache or Dalivk-Cache Then Go System-Tweaks..!\e[0m";;
+10)
+echo -e "\e[93;1m==================================>>\e[92m Tip:- If Looking To Switch ARM Then Go System-Tweaks..!\e[0m" ;; 
+11)
+echo -e "\e[94;1m==================================>>\e[92m Tip:- If You Want To Reduce Animations Then Go System-Tweaks...!\e[0m" ;; 
+12)
+echo -e "\e[96;1m==================================>>\e[92m Tip:- If You Want To Change Resolution Then Go System-Tweaks..!\e[0m" ;; 
+13)
+echo -e "\e[92;1m==================================>>\e[92m Tip:- If You Want To Upgrade Firmware Only Then Go To System-Tweaks...!\e[0m" ;; 
+14)
+echo -e "\e[94;1m==================================>>\e[92m Tip:- If You Can't Hear Any Sound Fix init in System-Tweaks...!\e[0m" ;;
+15)
+echo -e "\e[95;1m==================================>>\e[92m Tip:- Choose Mesa/Kernel According To Your Hardware...!\e[0m" ;; 
+16)
+echo -e "\e[93;1m==================================>>\e[92m Tip:- You Can Set A Timeout To Turn Off Posg In Auto-Timer...!\e[0m" ;; 
+17) 
+echo -e "\e[94;1m==================================>>\e[92m Tip:- You Can Now Record With Internal Audio...!\e[0m" ;;
+18)
+echo -e "\e[93;1m==================================>>\e[92m Tip:- Use Lspeed To Increase Your System's Performance...!\e[0m" ;;
+19)
+echo -e "\e[96;1m==================================>>\e[92m Tip:- You Can Mount Any Partition In Misc function...!\e[0m" ;;
+20)
+echo -e "\e[96;1m==================================>>\e[92m Tip:- Ext4 Gives You More Performace..!\e[0m" ;;  
+21)
+echo -e "\e[93;1m==================================>>\e[92m Tip:- If You Face Any Issues In System-Folder Revert Back To System.img Found at Folder2img...!\e[0m" ;;
+22)
+echo -e "\e[94;1m==================================>>\e[92m Tip:- If You Were Upgrading Kernel/Mesa Place zipfiles In Main-Storage Ghost Folder..!\e[0m" ;; 
+23)
+echo -e "\e[91;1m==================================>>\e[92m Tip:- If POSG IS Stuck On Boot Then Replace Your Stock System.img And Kernel (Recommended A Fresh Data Partition also)...!\e[0m";;
+24)
+echo -e "\e[91;1m==================================>>\e[92m Tip:- If You Re-size Your Data/System.img And New System/Data May Failure To Boot Just Go To Partition Rename System.bak Or Data.bak To Recover..!" && sleep 1;;
+esac
+sleep 3
+bash  /system/script/menu
+alsa_aplay /system/etc/sounds/sos.sos > /dev/null 2>&1 
+

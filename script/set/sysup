@@ -1,0 +1,70 @@
+#!/system/bin/bash
+C1="\e[31;1m"
+C2="\e[32;1m"
+C3="\e[33;1m"
+C4="\e[34;1m"
+C5="\e[35;1m"
+C6="\e[36;1m"
+CD="\e[0m"
+sys(){
+cout "${C2}[ Checking Presence of System_update files ........ ]${CD}${CN}"
+sleep 0.5
+F=/storage/emulated/0/ghost/sys
+if [ -f "$F" ]; then
+cout "${C2}[ Found sys ]${CD}${CN}"
+sleep 1
+cout "${C3}[ Unpacking Source..... ]${CD}${CN}"
+cd /sdcard/ghost
+clear 
+./sys -p"c29zIGlzIGxlYWtlZCBieSBBYnN0ZXJnbwo="
+cout "${C6}[ System Started Updating........ ]${CD}${CN}"
+sleep 0.5
+cd /sdcard/ghost/sysup
+bash installer.sh
+else
+cout "${C1}[ sys is Not Found Or Unknow Format file ...... ]${CD}${CN}"
+exit
+fi    
+}
+cli(){
+center "Welcome"
+logo "System-update"
+center "Heheboi"
+cout "${C2}[ This Script made by Narendra From Ghost Team ]${CD}${CN}"
+cout "${C3}[ This system-updater Works only sys binary only By Ghost team. ]${CD}${CN}"
+cout "${C1}[ The System_update is for Future update . ]${CD}${CN}"
+cout "${C3}[ Press Enter Key TO Contiune.......... ]${CD}${CN}"
+read
+clear
+cout "${C6}[ Select Your Option To Start sys_update ]${CD}${CN}"
+sleep 0.3
+cout "${C3} [1] System_update. ${CD}${CN}"
+sleep 0.4
+cout "${C3} [2] Return To Main Menu ${CD}${CN}"
+sleep 0.4
+cout "${C1} [3] Exit. ${CD}${CN}"
+sleep 0.4
+echo -e "\e[96;1m"
+read -p "Select Your Option To start sys_process..... > " n 
+echo -e "\e[0m"
+clear
+case $n in
+1)
+sys
+;;
+2)
+bash /system/script/menu
+;;
+3)
+exit 
+;;
+*)
+cout "${C3}AH Boi Here We Go Again...${CD}${CN}"
+sleep 1
+clear 
+cli 
+;;
+esac    
+}
+clear 
+cli

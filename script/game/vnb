@@ -1,0 +1,104 @@
+vn_backup(){
+echo -e  "\e[92;1m YOUR CHOICE IS PUBGMVN_BACKUP. \e[0m"
+echo -e  " "
+echo -e  "\e[92;1m [ CHECKING PERVIOUS BACKUP ]\e[0m"
+echo -e  " "
+cd /storage/emulated/0
+F=/storage/emulated/0/PUBGMVN
+if [ -d "$F" ]; then
+echo -e  "\e[92;1m [ PUBGMVN_FOLDER IS FOUND. ]\e[0m"
+echo -e  " "
+echo -e  "\e[91;1m [ DELETING PUBGMVN_FOLDER FOR CREATING FRESH FOLDER. ]\e[0m"
+echo -e  " "
+cd /storage/emulated/0/
+rm -r PUBGMVN
+echo -e  "\e[92;1m [ PUBGMVN FOLDER IS REMOVED. ]\e[0m"
+echo -e  " "
+echo -e  "\e[92;1m [ CREATING PUBGMVN FOLDER WITH UPDATED FILES. ]\e[0m"
+echo -e  " "
+cd /storage/emulated/0
+mkdir PUBGMVN
+cd /storage/emulated/0/PUBGMVN
+mkdir DATA
+cd /storage/emulated/0/PUBGMVN/DATA
+mkdir com.vng.pubgmobile
+cd /storage/emulated/0/PUBGMVN/DATA/com.vng.pubgmobile
+mkdir files
+cd /storage/emulated/0/PUBGMVN/DATA/com.vng.pubgmobile/files
+mkdir UE4Game
+cd /storage/emulated/0/PUBGMVN/DATA/com.vng.pubgmobile/files/UE4Game
+mkdir ShadowTrackerExtra
+cd /storage/emulated/0/PUBGMVN/DATA/com.vng.pubgmobile/files/UE4Game/ShadowTrackerExtra
+mkdir ShadowTrackerExtra
+cd /storage/emulated/0/PUBGMVN/DATA/com.vng.pubgmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra
+mkdir Saved
+cd /storage/emulated/0/PUBGMVN
+mkdir OBB
+cd /storage/emulated/0/PUBGMVN
+mkdir APK
+echo -e  "\e[92;1m [ PUBGMVN_FOLDER IS CREATED SUCESSFULLY. ]\e[0m"
+echo -e  " "
+echo -e  "\e[93;1m [ STARTED COPYING ALL FILES IN PUBG_FOLDER. ]\e[0m"
+echo -e  " "
+echo -e  "\e[96;1m [ PLEASE WAIT......]\e[0m"
+echo -e  " "
+cd /storage/emulated/0/Android/obb
+cp -r com.vng.pubgmobile /storage/emulated/0/PUBGMVN/OBB
+#cp -r  com.vng.pubgmobile /storage/emulated/0/PUBGMVN/OBB
+echo -e  "\e[93;1m30% Done\e[0m"
+cd /storage/emulated/0/Android/data/com.vng.pubgmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/
+cp -r paks /storage/emulated/0/PUBGMVN/DATA/com.vng.pubgmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved
+#cp -r  paks /storage/emulated/0/PUBGMVN/DATA/com.vng.pubgmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved
+echo -e  "\e[93;1m70% Done\e[0m"
+cd /data/app/com.vng.pubgmobile-*/
+cp base.apk /storage/emulated/0/PUBGMVN/APK
+echo -e  "\e[92;1m [ 100% DONE. ]\e[0m"
+echo -e  " "
+echo -e  "\e[92;1m [ ALL PROCESS DONE PLEASE CHECK YOUR STORAGE FOLDER CALLED 'PUBGMVN' ]\e[0m"
+else
+echo -e  "\e[92;1m [ NO PUBGMVN_FOLDER IS FOUND. ]\e[0m"
+echo -e  " "
+echo -e  "\e[92;1m [ CREATING PUBGMVN FOLDER. ]\e[0m"
+echo -e  " "
+cd /storage/emulated/0
+mkdir PUBGMVN
+cd /storage/emulated/0/PUBGMVN
+mkdir DATA
+cd /storage/emulated/0/PUBGMVN/DATA
+mkdir com.vng.pubgmobile
+cd /storage/emulated/0/PUBGMVN/DATA/com.vng.pubgmobile
+mkdir files
+cd /storage/emulated/0/PUBGMVN/DATA/com.vng.pubgmobile/files
+mkdir UE4Game
+cd /storage/emulated/0/PUBGMVN/DATA/com.vng.pubgmobile/files/UE4Game
+mkdir ShadowTrackerExtra
+cd /storage/emulated/0/PUBGMVN/DATA/com.vng.pubgmobile/files/UE4Game/ShadowTrackerExtra
+mkdir ShadowTrackerExtra
+cd /storage/emulated/0/PUBGMVN/DATA/com.vng.pubgmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra
+mkdir Saved
+cd /storage/emulated/0/PUBGMVN
+mkdir OBB
+cd /storage/emulated/0/PUBGMVN
+mkdir APK
+echo -e  "\e[92;1m [ PUBGMVN_FOLDER IS CREATED SUCESSFULLY. ]\e[0m"
+echo -e  " "
+echo -e  "\e[93;1m [ STARTED COPYING ALL FILES IN PUBG_FOLDER. ]\e[0m"
+echo -e  " "
+echo -e  "\e[96;1m [ PLEASE WAIT......]\e[0m"
+echo -e  " "
+cd /storage/emulated/0/Android/obb
+cp -r  com.vng.pubgmobile /storage/emulated/0/PUBGMVN/OBB
+echo -e  "\e[93;1m30% Done\e[0m"
+cd /storage/emulated/0/Android/data/com.vng.pubgmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/
+cp -r  paks /storage/emulated/0/PUBGMVN/DATA/com.vng.pubgmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved
+echo -e "\e[93;1m70% Done\e[0m"
+cd /data/app/com.vng.pubgmobile-*/
+cp base.apk /storage/emulated/0/PUBGMVN/APK
+echo -e  " "
+echo -e  "\e[92;1m [ 100% DONE ]\e[0m"
+echo -e  " "
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+echo -e  "\e[92;1m [ ALL PROCESS DONE PLEASE CHECK YOUR STORAGE FOLDER CALLED 'PUBGMVN' ]\e[0m"
+fi
+}
+vn_backup

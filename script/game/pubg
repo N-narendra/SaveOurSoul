@@ -1,0 +1,144 @@
+#!/system/bin/bash
+choice(){
+cout "\e[96;1m[ PLEASE SELECT YOUR GAME VERSION.]\e[0m"
+cout "\e[92;1m [1] PUBG-GLOBLE VERSION. \e[0m"
+cout "\e[92;1m [2] PUBG-KR VERSION. \e[0m"
+cout "\e[94;1m [3] PUBG-VN VERSION. \e[0m"
+cout "\e[92;1m [4] RETURN TO MENU. \e[0m"
+cout "\e[91;1m [5] EXIT. \e[0m"
+echo -e "\e[93;1m"
+read -p "PLEASE SELECT YOUR VERION FOR BACKUP & RESTORE:- " c
+echo -e "\e[0m"
+clear
+case $c in 
+1)
+cout "\e[93;1m[ YOUR SELECTED PUBG-GLOBLE VERSION. ]\e[0m"
+cout  "\e[98;1m[ PLEASE CHOICE YOUR OPTION ]\e[0m"
+cout  "\e[92;1m [1] BACKUP_PUBGM.\e[0m"
+cout  "\e[92;1m [2] RESTORE_PUBGM.\e[0m"
+echo -e  "\e[93;1m"
+read -p "CHOOSE YOUR CHOICE TO PERFORM ACTION:- " n
+echo -e  "\e[0m"
+clear
+case $n in
+1)
+bash /system/script/game/glb 
+;;
+2)
+bash /system/script/game/glr 
+;;
+3)
+choice
+;;
+*)
+cout "\e[93;1mAh Boi Here We Go Again\e[0m"
+sleep 0.7
+clear 
+choice 
+;;
+esac
+;;
+2)
+cout "\e[93;1m[ YOUR SELECTED PUBG-KR VERSION. ]\e[0m"
+cout  "\e[98;1m[ PLEASE CHOICE YOUR OPTION ]\e[0m"
+cout  "\e[92;1m [1] BACKUP_PUBGM.\e[0m"
+cout  "\e[92;1m [2] RESTORE_PUBGM.\e[0m"
+echo -e  "\e[93;1m"
+read -p "CHOOSE YOUR CHOICE TO PERFORM ACTION:- " n
+echo -e  "\e[0m"
+case $n in 
+1)
+bash /system/script/game/krb 
+;;
+2)
+bash /system/script/game/krr 
+;;
+3)
+choice 
+;;
+*)
+cout "\e[93;1mAh Boi Here We Go Again.\e[0m"
+sleep 0.7 
+choice 
+;;
+esac 
+;;
+3)
+cout "\e[93;1m[ YOUR SELECTED PUBG-VN VERSION. ]\e[0m"
+cout  "\e[98;1m[ PLEASE CHOICE YOUR OPTION ]\e[0m"
+cout  "\e[92;1m [1] BACKUP_PUBGM-VN.\e[0m"
+cout  "\e[92;1m [2] RESTORE_PUBGM-VN.\e[0m"
+echo -e  "\e[93;1m"
+read -p "CHOOSE YOUR CHOICE TO PERFORM ACTION:- " n
+echo -e  "\e[0m"
+case $n in 
+1)
+bash /system/script/game/vnb
+;;
+2)
+bash /system/script/game/vnr 
+;;
+3)
+choice 
+;;
+*)
+cout "\e[93;1mAh Boi Here We Go Again.\e[0m"
+sleep 0.7 
+choice 
+;;
+esac 
+;;
+4)
+bash /system/script/menu 
+;;
+5)
+exit 
+;;
+*)
+cout "\e[93;1mAh Boi Here We Go Again.\e[0m"
+sleep 0.7 
+clear 
+choice
+;;
+esac 
+}
+cli(){
+center "Welcome"
+logo "Pubgm"
+center "Heheboi"
+echo 
+cout  "\e[93;2m[ THIS IS PUBGM BACKUP & RESTORE Made By Narendra From Ghost Official. ]\e[0m"
+cout  " "
+cout "\e[91;1m[ NOTE:- IF APK NOT FOUND ERROR PLEASE DOWNLOAD APK INSTALL BY YOUR SELF. ]\e[0m"
+cout " "
+cout "\e[96;1m[ NOTE:- IF YOUR USING ALT + F1 TERMINAL PLEASE TYPE REBOOT AFTER PROCESS IS DONE. ]\e[0m"
+cout " "
+cout  "\e[95;1m[ Choose your Option.]\e[0m"
+cout " "
+cout "\e[93;1m [1] Pubg (Backup & Restore)\e[0m"
+echo 
+cout "\e[94;1m [2] Return To Main Menu.\e[0m"
+echo 
+cout "\e[91;1m [3] Exit.\e[0m"
+echo -e "\e[93;1m"
+read -p "Enter Your Choice:- " c 
+echo -e "\e[0m"
+clear 
+case $c in 
+1)
+choice
+;;
+2)
+bash /system/script/menu
+;;
+3)
+exit 
+;;
+*)
+cout "\e[93;1mAh Boi Here We Go Again.\e[0m"
+sleep 0.7
+cli 
+;;
+esac 
+}
+cli

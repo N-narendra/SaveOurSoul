@@ -1,0 +1,89 @@
+#!/system/bin/bash
+C1="\e[31;1m"
+C2="\e[32;1m"
+C3="\e[33;1m"
+C4="\e[34;1m"
+C5="\e[35;1m"
+C6="\e[36;1m"
+CD="\e[0m"
+global()
+{
+cout "${C6}[ CLEARING BROKEN CACHED DATA ]${CD}${CN}"
+rm -rf /data/media/0/Android/data/com.tencent.ig/files/ProgramBinaryCache/*
+rm -rf /data/media/0/Android/data/com.tencent.ig/cache
+cout "\e[98;1m[ SETTING UP THE ORIGINAL STATE ]${CD}${CN}"
+rm -f /data/media/0/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/UserCustom.ini
+sleep 3
+cout "${C2}[ HeHe Boi ]${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C3}[ Press ALT+F7 or ALT+FN+F7 to Exit ]${CD}${CN}"    
+}
+kr(){
+cout "${C6}[ CLEARING BROKEN CACHED DATA ]${CD}${CN}"
+rm -rf /data/media/0/Android/data/com.pubg.krmobile/files/ProgramBinaryCache/*
+rm -rf /data/media/0/Android/data/com.pubg.krmobile/cache
+cout "${C3}[ SETTING UP THE ORIGINAL STATE ]${CD}${CN}"
+rm -f /data/media/0/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/UserCustom.ini
+sleep 3
+cout "${C2}[ HeHe Boi ]${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C3}[ Press ALT+F7 or ALT+FN+F7 to Exit ]${CD}${CN}"    
+}
+vn(){
+cout "${C6}[ CLEARING BROKEN CACHED DATA ]${CD}${CN}"
+rm -rf /data/media/0/Android/data/com.vng.pubgmobile/files/ProgramBinaryCache/*
+rm -rf /data/media/0/Android/data/com.vng.pubgmobile/cache
+cout "${C3}[ SETTING UP THE ORIGINAL STATE ]${CD}${CN}"
+rm -f /data/media/0/Android/data/com.vng.pubgmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Config/Android/UserCustom.ini
+sleep 3
+cout "${C2}[ HeHe Boi ]${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C3}[ Press ALT+F7 or ALT+FN+F7 to Exit ]${CD}${CN}"
+}
+cli(){
+center "Welcome"
+logo "Pubgm Refresher"
+center "Heheboi"
+echo
+cout "${C3}[ MADE BY SPECTRE ]${CD}${CN}"
+cout "${C2}[ THIS SCRIPT IS USED TO REFRESH PUBG ]${CD}${CN}"
+cout "${C1}[ CAUTION: DONT USE THIS SCRIPT UNNECESSARILY , USE ONLY WHEN PUBG BECAME EXTREMELY LAGGY/UNPLAYABLE ]${CD}${CN}"
+cout "${C3}[ TIP: IF YOU'RE LOW END USER DONT DOWNLOAD RESOURCE PACKS AND OTHER MAPS EXCEPT TDM AND YOUR FAVOURITE MAP TO AVOID LAG ]${CD}${CN}"
+cout "${C3}[ DON'T FORGET TO SET YOUR DESIRED GRAPHICS PRESET IN PUBG SETTINGS, AFTER COMPLETING THE SCRIPT ]${CD}${CN}"
+cout "${C6}[ PRESS ENTER TO CONTINUE ]${CD}${CN}"
+read 
+clear
+cout "${C6}[ CHOOSE YOUR GAME PACKAGE ]${CD}${CN}"
+cout "${C3} [1] PUBG GLOBAL  ${CD}${CN}"
+cout "${C4} [2] PUBG KR  ${CD}${CN}"
+cout "${C6} [3] PUBG VN ${CN}${CD}"
+cout "${C5} [4] Return To Main-Menu.  ${CD}${CN}"
+cout "${C1} [5] Exit.  ${CD}${CN}"
+echo -e "\e[93;1m"
+read -p "Enter the Option:- " c 
+echo -e "\e[0m"
+case $c in
+1)
+global
+;;
+2)
+kr
+;;
+3)
+vn ;;
+4)
+bash /system/script/menu
+;;
+5)
+exit 
+;;
+*)
+clear 
+cout "${C3}Ah Boi Here We Go again....${CD}${CN}"
+sleep 1
+cli 
+;;
+esac
+}
+clear
+cli

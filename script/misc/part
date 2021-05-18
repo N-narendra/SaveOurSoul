@@ -1,0 +1,58 @@
+#!/system/bin/bash 
+C1="\e[31;1m"
+C2="\e[32;1m"
+C3="\e[33;1m"
+C4="\e[34;1m"
+C5="\e[35;1m"
+C6="\e[36;1m"
+blkid_mount(){    
+bd=$(blkid -o "device"| grep -v loop)   
+bm=$(blkid -s "TYPE" -s "LABEL" | grep -v loop) 
+cout "${C3}List Of Partition For Mount.${CD}${CN}"
+echo -e "\e[96;1m"
+blkid -o "list"
+echo -e "\e[0m"
+cout "${C3}Select Partition To Mount${CD}${CN}"
+echo -e "\e[96;1m"
+select Partition in ${bd}; 
+do 
+cout "${C4}Mounting Partition is ${Partition}";
+mkdir -m777 /sdcard/sosmount > /dev/null 2>&1
+mount  $Partition /sdcard/sosmount/ 
+echo
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C2}Partition Mounted On /sdcard/ghostmount ${CD}${CN}"
+break;
+done
+}
+cli(){
+center "welcome"
+logo "Partition"
+center "Heheboi"  
+echo  
+cout "${C3}[1] Partition Mounter.${CD}${CN}"
+cout "${C4}[2] Return To Menu.${CD}${CN}"
+cout "${C1}[3] Exit.${CD}${CN}"
+echo -e "\e[93;1m"
+read -p "Enter Your Choice:- " c 
+echo -e "\e[0m"
+clear 
+case $c in 
+1)
+blkid_mount 
+;;
+2)
+bash /system/script/menu 
+;;
+3)
+exit 
+;;
+*)
+cout "${C3}Ah Boi Here We Go Again.${CD}${CN}"
+sleep 0.8
+clear 
+cli 
+;;
+esac 
+}
+cli

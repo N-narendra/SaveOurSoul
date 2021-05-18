@@ -1,0 +1,95 @@
+#!/system/bin/bash
+C1="\e[31;1m"
+C2="\e[32;1m"
+C3="\e[33;1m"
+C4="\e[34;1m"
+C5="\e[35;1m"
+C6="\e[36;1m"
+CD="\e[0m"
+resolution(){
+cout "${C2}[ Your choice is Set Resolution. ]${CD}${CN}" 
+cout "${C6}[ Current is [ $sc ].${CD}${CN}"
+echo -e "\e[92;1m"
+read -p "Enter The wight_and_Higth [Example:-1024x768]:- " R
+echo -e "\e[0m" 
+cout "${C3}[ resolution is "$R" .]${CD}${CN}" 
+wm size $R
+cout "${C2}[ Heheboi. ]${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C3}[ Press Alt+f7 To close Termianl. ]${CD}${CN}"  
+}
+resolution_reset(){
+cout "${C2}[ Your choice is rest Resolution .]${CD}${CN}"
+wm size reset
+cout "${C3}[ HeHeboi. ]${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C3}[ Press Alt+f7 To close Termianl. ]${CD}${CN}"    
+}
+dpi(){
+cout "${C2}[ Your choice is Set Density [dpi]. ]${CD}${CN}" 
+cout "${C6}[ Current is [ $dc ].${CD}${CN}"
+echo -e "\e[93;1m"
+read -p "Enter The [dpi] [Example:-120]:- " R
+echo -e "\e[0m"  
+cout "${C3}[ resolution is "$R" .]${CD}${CN}" 
+wm density $R
+cout "${C2}[ Heheboi. ]${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C3}[ Press Alt+f7 To close Termianl. ]${CD}${CN}"
+}
+dpi_reset(){
+cout "${C2}[ Your choice is rest density .]${CD}${CN}"
+wm density reset
+cout "${C3}[ HeHeboi. ]${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C3}[ Press Alt+f7 To close Termianl. ]${CD}${CN}"    
+}
+cli(){
+center "Welcome"
+logo "Resolution"
+center "Heheboi"  
+echo   
+cout "${C2}[ Custom Resolution changer. ]${CD}${CN}"
+cout "${C6}[ Made By Narendra From Ghost team ]${CD}${CN}"
+sc=$(cat /system/status/display.txt)
+dc=$(cat /system/status/density.txt)
+cout "${C5}[ Choose The Action here ]${CD}${CN}"
+cout "${C2} [1] Set resolution. ${CD}${CN}"
+cout "${C3} [2] Reset resolution. ${CD}${CN}"
+cout "${C4} [3] Set density [dpi]. ${CD}${CN}"
+cout "${C5} [4] Reset density [dpi]. ${CD}${CN}"
+cout "${C6} [5] Return to main menu. ${CD}${CN}"
+cout "${C1} [6] Exit. ${CD}${CN}"
+echo -e "\e[93;1m"
+read -p "choose your option :- " c
+echo -e "\e[0m"   
+clear 
+case $c in 
+1)
+resolution
+;;
+2)
+resolution_reset
+;;
+3)
+dpi
+;;
+4)
+dpi_reset
+;;
+5)
+bash /system/script/menu
+;;
+6)
+exit 
+;;
+*)
+cout "${C3}Ah Boi Here We Go Again....${CD}${CN}"
+sleep 1
+clear
+cli 
+;;
+esac     
+}
+clear 
+cli

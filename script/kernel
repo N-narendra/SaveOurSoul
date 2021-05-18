@@ -1,0 +1,192 @@
+#!/system/bin/bash 
+C1="\e[31;1m"
+C2="\e[32;1m"
+C3="\e[33;1m"
+C4="\e[34;1m"
+C5="\e[35;1m"
+C6="\e[36;1m"
+CD="\e[0m"
+ext4(){
+cd /data/media/0/ghost
+    A=/data/media/0/ghost/firmware
+    if [ -d "$A" ]; then
+        cout "${C2}[ FIRMWARE DIRECTORY FOUND...! ] ${CD}${CN}"
+        cout "${C3} REMOVING OLD DIRECTORIES...! ${CD}${CN}"
+        cd /system/lib
+        rm -rf firmware
+        cout "${C6}[ UPDATING FIRMWARE...PLEASE WAIT ]${CD}${CN}"
+        find /data/media/0/ghost -type d -exec chmod 755 {} \;
+        find /data/media/0/ghost/firmware -type f -exec chmod 644 {} \;
+        rsync -aq /data/media/0/ghost/firmware /system/lib/
+    else
+        cout "${C2}[ FIRMWARE DIRECTORY NOT FOUND, UPDATING MODULES ONLY! ] ${CD}${CN}"
+    fi
+    cd /data/media/0/ghost
+    B=/data/media/0/ghost/modules
+    if [ -d "$B" ]; then
+        cout "${C2}[ DOWNLOAD SOURCE IS CORRECT! ] ${CD}${CN}"
+        cout "${C3} REMOVING OLD DIRECTORIES...! ${CD}${CN}"
+        cd /system/lib
+        rm -rf modules
+        cout "${C6}[ Changing KERNEL...PLEASE WAIT ]${CD}${CN}"
+        find /data/media/0/ghost -type d -exec chmod 755 {} \;
+        find /data/media/0/ghost/modules -type f -exec chmod 644 {} \;
+        rsync -aq /data/media/0/ghost/modules /system/lib/
+        find /system/lib -type d -exec chmod 755 {} \;
+        find /system/lib -type f -exec chmod 644 {} \;
+        cout "${C6}[ Placing Kernel file ]${CD}${CN}"
+        y=$(find /GhostRoot -maxdepth 4 -type f -name heheboi.nab)
+        z=${y%/*}
+        cd /data/media/0/ghost
+        chmod 777 kernel
+        cd /data/media/0/ghost
+        rsync -aq kernel $z 
+        find /data/media/0/ghost -type d -exec chmod 777 {} \;
+        find /data/media/0/ghost/modules -type f -exec chmod 777 {} \;
+        cd /data/media/0/ghost
+        X=/data/media/0/ghost/firmware
+        if [ -d "$X" ]; then
+            find /data/media/0/ghost/firmware -type f -exec chmod 777 {} \;
+        fi
+        cd /storage/emulated/0/ghost
+        rm -f *.ght
+        cd /storage/emulated/0/ghost
+        rm -rf modules firmware kernel
+        sleep 3
+        cout "${C2}[ HeHe Boi ]${CD}${CN}"
+        alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+        cout "${C6}[ IT NEEDS ABOVE 5 MINUTES FOR NEXT RESTART, PLEASE BE PATIENT ]${CD}${CN}"
+rm -rf /data/dalvik-cache/*
+sleep 3
+sec=3
+while [ $sec -ge 0 ]; do
+echo -ne "\e[33;1mRebooting in:-\e[91;1m$sec\e[0m\033[0K\r"
+let "sec=sec-1"
+sleep 1
+done
+        reboot
+    else
+        cout "\e[98;1m[ KERNEL SOURCE IS DIFFERENT, CAN'T UPDATE, PLEASE DOWNLOAD FROM LINKS PROVIDED IN WEBSITE ONLY ; Error 69 ]${CD}${CN}"
+        cd /storage/emulated/0/ghost
+        rm -f *.ght
+        cd /storage/emulated/0/ghost
+        rm -rf modules firmware kernel
+    fi    
+}
+ntfs(){
+cd /data/media/0/ghost
+    A=/data/media/0/ghost/firmware
+    if [ -d "$A" ]; then
+        cout "${C2}[ FIRMWARE DIRECTORY FOUND...! ] ${CD}${CN}"
+        cout "${C3} REMOVING OLD DIRECTORIES...! ${CD}${CN}"
+        cd /system/lib
+        rm -rf firmware
+        cout "${C6}[ UPDATING FIRMWARE...PLEASE WAIT ]${CD}${CN}"
+        find /data/media/0/ghost -type d -exec chmod 755 {} \;
+        find /data/media/0/ghost/firmware -type f -exec chmod 644 {} \;
+        rsync -aq /data/media/0/ghost/firmware /system/lib/
+    else
+        cout "${C2}[ FIRMWARE DIRECTORY NOT FOUND, UPDATING MODULES ONLY! ] ${CD}${CN}"
+    fi
+    cd /data/media/0/ghost
+    B=/data/media/0/ghost/modules
+    if [ -d "$B" ]; then
+        cout "${C2}[ DOWNLOAD SOURCE IS CORRECT! ] ${CD}${CN}"
+        cout "${C3} REMOVING OLD DIRECTORIES...! ${CD}${CN}"
+        cd /system/lib
+        rm -rf modules
+        cout "${C6}[ Changing KERNEL...PLEASE WAIT ]${CD}${CN}"
+        find /data/media/0/ghost -type d -exec chmod 755 {} \;
+        find /data/media/0/ghost/modules -type f -exec chmod 644 {} \;
+        rsync -aq /data/media/0/ghost/modules /system/lib/
+        find /system/lib -type d -exec chmod 755 {} \;
+        find /system/lib -type f -exec chmod 644 {} \;
+        cout "${C6}[ Placing Kernel file ]${CD}${CN}"
+        y=$(find /GhostRoot -maxdepth 4 -type f -name heheboi.nab)
+        z=${y%/*}
+        cd /data/media/0/ghost
+        chmod 777 kernel
+        rsync -aq kernel $z   
+        find /data/media/0/ghost -type d -exec chmod 777 {} \;
+        find /data/media/0/ghost/modules -type f -exec chmod 777 {} \;
+        cd /data/media/0/ghost
+        X=/data/media/0/ghost/firmware
+        if [ -d "$X" ]; then
+            find /data/media/0/ghost/firmware -type f -exec chmod 777 {} \;
+        fi
+        cd /storage/emulated/0/ghost
+        rm -f *.ght
+        cd /storage/emulated/0/ghost
+        rm -rf modules firmware kernel
+        cd /storage/emulated/0
+        sleep 3
+        cout "${C2}[ Hehe Boi ]${CD}${CN}"
+        alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+        cout "${C6}[ IT NEEDS ABOVE 5 MINUTES FOR NEXT RESTART, PLEASE BE PATIENT ]${CD}${CN}"
+rm -rf /data/dalvik-cache/*
+sleep 3
+sec=3
+while [ $sec -ge 0 ]; do
+echo -ne "\e[33;1mRebooting in:-\e[91;1m$sec\e[0m\033[0K\r"
+let "sec=sec-1"
+sleep 1
+done
+        reboot
+    else
+        cout "\e[91;1m[ KERNEL SOURCE IS DIFFERENT, CAN'T UPDATE, PLEASE DOWNLOAD FROM LINKS PROVIDED IN WEBSITE ONLY ; Error 69 ]${CD}${CN}"
+        cd /storage/emulated/0/ghost
+        rm -f *.ght
+        cd /storage/emulated/0/ghost
+        rm -rf firmware modules kernel
+    fi    
+}
+part(){
+cout "${C6}[ CHOOSE YOUR PARTITION STYLE ]${CD}${CN}"
+cout "${C3} [1] EXT4  ${CD}${CN}"
+cout "${C4} [2] NTFS ${CD}${CN}"
+echo -e "\e[93;1m"
+read -p "Choose your Partition:- " c
+echo -e "\e[0m"
+clear
+case $c in
+1)
+ext4
+;;
+2)
+ntfs
+;;
+*) 
+clear
+cout "${C1}Wrong Input....${CD}${CN}"
+sleep 0.5
+part 
+;;
+esac  
+}
+cli(){ 
+center "Welcome"
+logo "Kernel-Changer"
+center "Heheboi"
+echo 
+cout "${C2}[ SCRIPT MADE BY SPECTRE  ]${CD}${CN}"
+cout "${C3}[ THIS SCRIPT IS USED TO CHANGE KERNEL ]${CD}${CN}"
+cout "${C4}[ NOTE: PLEASE MAKE SURE THERE IS ONLY ONE ZIPPED KERNEL IN ghost FOLDER AND NO OTHER PERSONAL FILES ]${CD}${CN}"
+cout "${C2}[ THIS SCRIPT WORKS ONLY IN PhoenixOS Ghost AND ONLY GIVEN .ght EXTENTIONS ARE SUPPORTED ]${CD}${CN}"
+cout "${C5}[ TO GET LINKS FOR SUPPORTED KERNELS PLEASE CHECK OUR WEBSITE ]${CD}${CN}"
+cout "${C3} PRESS ENTER TO CONTINUE ]${CD}${CN}"
+read 
+clear
+if [ -e /data/media/0/ghost/*.ght ]; then
+cout "${C2} KERNEL FOUND.....! ${CD}${CN}"
+cout "${C3}INSTALLATION STARTED...! ${CD}${CN}"
+cout "${C3} DECOMPRESSING...! ${CD}${CN}"
+cd /sdcard/ghost/
+mv *.ght kernel.ght 
+7z x kernel.ght >/dev/null 2>&1
+cout "${C3}[ DECOMPRESSION PROCESS COMPLETED SUCCESSFULLY  ]  ${CD}${CN}"
+part
+else
+cout "${C1}[ KERNEL NOT FOUND, PUT KERNEL<versioncode>.ght INSIDE ghost Folder ; Error 69 ]${CD}${CN}"
+fi    
+}
+cli

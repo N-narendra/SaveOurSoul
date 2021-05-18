@@ -1,0 +1,84 @@
+kr_restore(){
+   echo -e  "\e[92;1m YOUR CHOICE IS RESTORE. \e[0m"
+echo -e  " "
+echo -e  "\e[96;1m CHECKING PUBG-FOLDER.\e[0m"
+echo -e  " "
+cd /storage/emulated/0
+F=/storage/emulated/0/PUBGMKR #if for pubg-folder
+if [ -d "$F" ]; then
+echo -e  "\e[92;1m PUBG FOLDER IS FOUND.....! \e[0m"
+echo -e  " "
+echo -e  "\e[93;1m RESTORE STARTED...! \e[0m"
+echo -e  " "
+cd /storage/emulated/0
+F=/storage/emulated/0/Android/obb
+if [ -d "$F" ]; then #if for obb checks
+cd /storage/emulated/0
+F=/storage/emulated/0/Android/obb/com.pubg.krmobile
+if [ -d "$F" ]; then #if for remove obb-contains
+cd /storage/emulated/0/Android/obb
+rm -R com.pubg.krmobile
+cd /storage/emulated/0/PUBGMKR/OBB
+cp -r  com.pubg.krmobile /storage/emulated/0/Android/obb
+echo -e  " "
+cd /storage/emulated/0/PUBGMKR/DATA
+cp -r  com.pubg.krmobile /storage/emulated/0/Android/data
+echo -e  " "
+cd /storage/emulated/0/PUBGMKR/APK
+pm install base.apk
+echo -e  " "
+echo -e  "\e[92;1m 100% DONE \e[0m"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+else
+cd /storage/emulated/0/PUBGMKR/OBB
+cp -r  /storage/emulated/0/Android/obb
+echo -e  "\e[93;1m30% Done\e[0m"
+cd /storage/emulated/0/PUBGMKR/DATA
+cp -r  com.pubg.krmobile /storage/emulated/0/Android/data
+echo -e  "\e[93;1m70% Done\e[0m"
+cd /storage/emulated/0/PUBGMKR/APK
+pm install base.apk
+echo -e  " "
+echo -e  "\e[92;1m 100% DONE \e[0m"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+fi
+else
+cd /storage/emulated/0/Android
+mkdir obb
+cd /storage/emulated/0
+F=/storage/emulated/0/Android/obb/com.pubg.krmobile
+if [ -d "$F" ]; then #if for remove obb-contains
+cd /storage/emulated/0/Android/obb
+rm -R com.pubg.krmobile
+cd /storage/emulated/0/PUBGMKR/OBB
+echo -e " "
+cp -r  com.pubg.krmobile /storage/emulated/0/Android/obb
+echo -e  " "
+cd /storage/emulated/0/PUBGMKR/DATA
+cp -r  com.pubg.krmobile /storage/emulated/0/Android/data
+echo -e  " "
+cd /storage/emulated/0/PUBGMKR/APK
+pm install base.apk
+echo -e  " "
+echo -e  "\e[92;1m 100% DONE \e[0m"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+else
+cd /storage/emulated/0/PUBGMKR/OBB
+echo -e " "
+cp -r  com.pubg.krmobile /storage/emulated/0/Android/obb
+echo -e  " "
+cd /storage/emulated/0/PUBGMKR/DATA
+cp -r  com.pubg.krmobile /storage/emulated/0/Android/data
+echo -e  " "
+cd /storage/emulated/0/PUBGMKR/APK
+pm install base.apk
+echo -e  " "
+echo -e  "\e[92;1m 100% DONE \e[0m"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+fi
+fi
+else
+echo -e  "\e[91;1m PUBG_FOLDER DOES NOT EXITS. \e[0m"
+fi 
+}
+kr_restore

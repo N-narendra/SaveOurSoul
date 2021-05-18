@@ -1,0 +1,83 @@
+#!/system/bin/bash 
+C1="\e[31;1m"
+C2="\e[32;1m"
+C3="\e[33;1m"
+C4="\e[34;1m"
+C5="\e[35;1m"
+C6="\e[36;1m"
+CD="\e[0m"
+no(){
+cout "${C6}[ TWEAKING SETTINGS... ]${CD}${CN}"
+settings put global window_animation_scale 0
+settings put global transition_animation_scale 0
+settings put global animator_duration_scale 0
+sleep 3
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C6}[ HeHe Boi ]${CD}${CN}"
+cout "${C3}[ Press ALT+F7 or ALT+FN+F7 to Exit ]${CD}${CN}"
+sleep 3    
+}
+less(){
+cout "${C6}[ TWEAKING SETTINGS... ]${CD}${CN}"
+settings put global window_animation_scale 0.5
+settings put global transition_animation_scale 0.5
+settings put global animator_duration_scale 0.5
+sleep 3
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C4}[ HeHe Boi ]${CD}${CN}"
+cout "${C6}[ Press ALT+F7 or ALT+FN+F7 to Exit ]${CD}${CN}"
+sleep 3    
+}
+default(){
+cout "${C6}[ TWEAKING SETTINGS... ]${CD}${CN}"
+settings put global window_animation_scale 1
+settings put global transition_animation_scale 1
+settings put global animator_duration_scale 1
+sleep 3
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C4}[ HeHe Boi ]${CD}${CN}"
+cout "${C6}[ Press ALT+F7 or only F7 to Exit ]${CD}${CN}"
+sleep 3    
+}
+cli(){
+center "Welcome"
+logo "Animation"
+center "Heheboi"
+echo 
+cout "${C3}[ MADE BY SPECTRE ]${CD}${CN}"
+cout "${C4}[ THIS SCRIPT IS USED TO MANAGE ANDROID ANIMATION  ]${CD}${CN}"
+cout "${C2}[ Select the options below ]${CD}${CN}"
+cout "${C3} [1] NO ANIMATION.  ${CD}${CN}"
+cout "${C4} [2] LESS ANIMATION. ${CD}${CN}"
+cout "${C6} [3] Default ANIMATION. ${CD}${CN}"
+cout "${C5} [4] Return To Main Menu.${CD}${CN}"
+cout "${C1} [5] Exit. ${CD}${CN}"
+echo -e "\e[93;1m"
+read -p "Enter the Option:- " c
+echo -e "\e[0m"
+clear
+case $c in
+1)
+no 
+;;
+2)
+less
+;;
+3)
+default
+;;
+4)
+bash /system/script/menu
+;;
+5)
+exit 
+;;
+*)
+cout "${C3}Ah boi Here We Go Again....${CD}${CN}"
+sleep 1
+clear
+cli 
+;;
+esac    
+}
+cli

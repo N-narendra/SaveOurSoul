@@ -1,0 +1,223 @@
+#!/system/bin/bash 
+C1="\e[31;1m"
+C2="\e[32;1m"
+C3="\e[33;1m"
+C4="\e[34;1m"
+C5="\e[35;1m"
+C6="\e[36;1m"
+CD="\e[0m"
+CN="\n"
+data(){
+y=$(find /GhostRoot -maxdepth 4 -type f -name heheboi.nab)
+z=${y%/*}  
+clear
+cout "${C3}Checking Data Style...!${CN}${CD}"
+if [ -e $z/data.img ]; then 
+cout "${C2}Data IMG IS Found..!${CN}${CD}"
+mkdir -m755 /sdcard/datatmp 
+mkdir -m755 /sdcard/datamnt 
+cout "${C3}Select Your Size...!${CN}${CD}"
+cout "${C4}1] 16 GB.${CN}${CD}"
+cout "${C2}2] 32 GB.${CN}${CD}"
+cout "${C5}3] 64 GB.${CN}${CD}"
+cout "${C6}4] 128 GB. ${CN}${CD}"
+cout "${C1}5] 256 GB. ${CN}${CD}"
+cout "${C3}6] Return to Main Menu.${CN}${CD}"
+cout "${C1}7] Exit.${CN}${CD}"
+echo -e "\e[93;1m"
+read -p "Select Your Size >> " size 
+echo -e "\e[0m"
+case $size in 
+1)
+cout "${C3}Creating 16 Gb Size Data.img${CN}${CD}"
+dd if=/dev/zero of=/sdcard/datatmp/data.img bs=1M count=16384 > /dev/null 2>&1 
+cout "${C4}Data.img Created..! Press "y" For Formant New Data.img As ext4${CN}${CD}"
+cout " "
+mke2fs -t ext4 /sdcard/datatmp/data.img 
+cout "${C5}Mounting Data.img To Transfer old data to New Data.img.${CN}${CD}"
+mount /sdcard/datatmp/data.img /sdcard/datamnt/ 
+sleep 0.5
+clear
+echo -e "${C6}          Progress   ${C5}   Speed     ${C3}   Time${CD}${CN}"
+rsync -ah --info=progress2 /data/* /sdcard/datamnt/ 
+umount /sdcard/datamnt
+cout " "
+cout "${C3}Heheboi${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C4}Moving data.img In Ext4_Partition.${CD}${CN}"
+mv /sdcard/datatmp/data.img $z/new.img  
+cout "${C3}Moved.${CD}${CN}"
+rmdir /sdcard/datamnt
+rmdir /sdcard/datatmp
+cout "${C6}Renaming Old Data.img To Data.bak ${C1}${CD}For Safety.${CD}${CN}"
+mv $z/data.img $z/data.bak 
+mv $z/new.img $z/data.img
+sleep 2
+sec=5
+while [ $sec -ge 0 ]; do
+echo -ne "\e[33;1mRebooting in:-\e[91;1m $sec \e[0m\033[0K\r"
+let "sec=sec-1"
+sleep 1
+done
+reboot ;;
+2)cout "${C3}Creating 32 Gb Size Data.img${CN}${CD}"
+dd if=/dev/zero of=/sdcard/datatmp/data.img bs=1M count=32768 > /dev/null 2>&1 
+cout "${C4}Data.img Created..! Press "y" For Formant New Data.img As ext4${CN}${CD}"
+echo -e " "
+mke2fs -t ext4 /sdcard/datatmp/data.img 
+cout "${C5}Mounting Data.img To Transfer old data to New Data.img.${CN}${CD}"
+mount /sdcard/datatmp/data.img /sdcard/datamnt/ 
+sleep 0.5
+clear
+echo -e "${C6}          Progress   ${C5}   Speed     ${C3}   Time${CD}${CN}"
+rsync -ah --info=progress2 /data/* /sdcard/datamnt/ 
+umount /sdcard/datamnt
+cout " "
+cout "${C3}Heheboi${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C4}Moving data.img In Ext4_Partition.${CD}${CN}"
+mv /sdcard/datatmp/data.img $z/new.img   
+cout "${C3}Moved.${CD}${CN}"
+rmdir /sdcard/datamnt
+rmdir /sdcard/datatmp
+cout "${C6}Renaming Old Data.img To Data.bak ${C1}${CD}For Safety.${CD}${CN}"
+mv $z/data.img $z/data.bak 
+mv $z/new.img $z/data.img
+sleep 2
+sec=5
+while [ $sec -ge 0 ]; do
+echo -ne "\e[33;1mRebooting in:-\e[91;1m $sec \e[0m\033[0K\r"
+let "sec=sec-1"
+sleep 1
+done
+reboot ;;
+3)cout "${C3}Creating 64 Gb Size Data.img${CN}${CD}"
+dd if=/dev/zero of=/sdcard/datatmp/data.img bs=1M count=65536 > /dev/null 2>&1 
+cout "${C4}Data.img Created..! Press "y" For Formant New Data.img As ext4${CN}${CD}"
+cout " "
+mke2fs -t ext4 /sdcard/datatmp/data.img 
+cout "${C5}Mounting Data.img To Transfer old data to New Data.img.${CN}${CD}"
+mount /sdcard/datatmp/data.img /sdcard/datamnt/ 
+sleep 0.5
+clear
+echo -e "${C6}          Progress   ${C5}   Speed     ${C3}   Time${CD}${CN}"
+rsync -ah --info=progress2 /data/* /sdcard/datamnt/ 
+umount /sdcard/datamnt
+cout " "
+cout "${C3}Heheboi${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C4}Moving data.img In Ext4_Partition.${CD}${CN}"
+mv /sdcard/datatmp/data.img $z/new.img  
+cout "${C3}Moved.${CD}${CN}"
+rmdir /sdcard/datamnt
+rmdir /sdcard/datatmp
+cout "${C6}Renaming Old Data.img To Data.bak ${C1}${CD}For Safety.${CD}${CN}"
+mv $z/data.img $z/data.bak 
+mv $z/new.img $z/data.img
+sleep 2
+sec=5
+while [ $sec -ge 0 ]; do
+echo -ne "\e[33;1mRebooting in:-\e[91;1m $sec \e[0m\033[0K\r"
+let "sec=sec-1"
+sleep 1
+done
+reboot ;;
+4)cout "${C3}Creating 128 Gb Size Data.img${CN}${CD}"
+dd if=/dev/zero of=/sdcard/datatmp/data.img bs=1M count=131072 > /dev/null 2>&1 
+cout "${C4}Data.img Created..! Press "y" For Formant New Data.img As ext4${CN}${CD}"
+cout " "
+mke2fs -t ext4 /sdcard/datatmp/data.img 
+cout "${C5}Mounting Data.img To Transfer old data to New Data.img.${CN}${CD}"
+mount /sdcard/datatmp/data.img /sdcard/datamnt/ 
+sleep 0.5
+clear
+echo -e "${C6}          Progress   ${C5}   Speed     ${C3}   Time${CD}${CN}"
+rsync -ah --info=progress2 /data/* /sdcard/datamnt/ 
+umount /sdcard/datamnt
+cout " "
+cout "${C3}Heheboi${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C4}Moving data.img In Ext4_Partition.${CD}${CN}"
+mv /sdcard/datatmp/data.img $z/new.img  
+cout "${C3}Moved.${CD}${CN}"
+rmdir /sdcard/datamnt
+rmdir /sdcard/datatmp
+cout "${C6}Renaming Old Data.img To Data.bak ${C1}${CD}For Safety.${CD}${CN}"
+mv $z/data.img $z/data.bak 
+mv $z/new.img $z/data.img
+sleep 2
+sec=5
+while [ $sec -ge 0 ]; do
+echo -ne "\e[33;1mRebooting in:-\e[91;1m $sec \e[0m\033[0K\r"
+let "sec=sec-1"
+sleep 1
+done
+reboot ;;
+5)cout "${C3}Creating 256 Gb Size Data.img${CN}${CD}"
+dd if=/dev/zero of=/sdcard/datatmp/data.img bs=1M count=262144 > /dev/null 2>&1 
+cout "${C4}Data.img Created..! Press "y" For Formant New Data.img As ext4${CN}${CD}"
+cout " "
+mke2fs -t ext4 /sdcard/datatmp/data.img 
+cout "${C5}Mounting Data.img To Transfer old data to New Data.img.${CN}${CD}"
+mount /sdcard/datatmp/data.img /sdcard/datamnt/ 
+sleep 0.5
+clear
+echo -e "${C6}          Progress   ${C5}   Speed     ${C3}   Time${CD}${CN}"
+rsync -ah --info=progress2 /data/* /sdcard/datamnt/ 
+umount /sdcard/datamnt
+cout " "
+cout "${C3}Heheboi${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C4}Moving data.img In Ext4_Partition.${CD}${CN}"
+mv /sdcard/datatmp/data.img $z/new.img  
+cout "${C3}Moved.${CD}${CN}"
+rmdir /sdcard/datamnt
+rmdir /sdcard/datatmp
+cout "${C6}Renaming Old Data.img To Data.bak ${C1}${CD}For Safety.${CD}${CN}"
+mv $z/data.img $z/data.bak 
+mv $z/new.img $z/data.img
+sleep 2
+sec=5
+while [ $sec -ge 0 ]; do
+echo -ne "\e[33;1mRebooting in:-\e[91;1m $sec \e[0m\033[0K\r"
+let "sec=sec-1"
+sleep 1
+done
+reboot ;;
+6)
+bash /system/script/menu ;;
+7) exit ;;
+esac
+else
+cout "${C1}Your Using Ext4 Partition or Live Mode.${CD}${CN}" 
+fi
+}
+cli (){
+center "Welcome"
+logo "Data-Resizer"
+center "Heheboi"
+echo 
+cout "${C3}Re-Size Data.img.${CN}${CD}"
+cout "${C2}Choose your Options${CN}${CD}"
+cout "${C4}1] Re-size Data.img. ${CN}${CD}"
+cout "${C5}2] Return Main-Menu. ${CN}${CD}"
+cout "${C1}3] Exit.${CN}${CD}"
+echo -e "\e[93;1m"
+read -p "Enter Your Choice >> " c 
+echo -e "\e[0m"
+case $c in 
+1)
+data ;;
+2)
+bash /system/script/menu ;;
+3)
+exit ;;
+*)
+clear
+cout "${C3}AH Boi Here We Go again.....!${CN}${CD}"
+sleep 2
+clear 
+cli
+esac 
+}
+cli

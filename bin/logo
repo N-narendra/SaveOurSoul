@@ -1,0 +1,2 @@
+#!/system/bin/bash 
+figlet -w "$(tput cols)" -c "$1" | lolcat 

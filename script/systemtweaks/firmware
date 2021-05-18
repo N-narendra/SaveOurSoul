@@ -1,0 +1,97 @@
+#!/system/bin/bash
+C1="\e[31;1m"
+C2="\e[32;1m"
+C3="\e[33;1m"
+C4="\e[34;1m"
+C5="\e[35;1m"
+C6="\e[36;1m"
+CD="\e[0m"
+firmware(){
+if [ -e /data/media/0/ghost/*.ght ]; then
+cout  "${C2} FIRMWARE FOUND.....! ${CD}${CN}"
+cout  "${C3} INSTALLATION STARTED...! ${CD}${CN}"
+cout  "${C3} DECOMPRESSING...! ${CD}${CN}"
+cd /data/media/0/ghost/
+mv *.ght Firmware.ght
+7z x Firmware >/dev/null 2>&1
+cout "${C3}[ DECOMPRESSION PROCESS COMPLETED SUCCESSFULLY  ]  ${CD}${CN}"
+cd /data/media/0/ghost
+B=/data/media/0/ghost/firmware
+if [ -d "$B" ]; then
+cout  "${C2}[ DOWNLOAD SOURCE IS CORRECT! ] ${CD}${CN}"
+cout  "${C3} REMOVING OLD DIRECTORIES...! ${CD}${CN}"
+cd /system/lib
+rm -rf firmware
+cout "${C6}[ UPDATING FIRMWARE...PLEASE WAIT ]${CD}${CN}"
+find /data/media/0/ghost -type d -exec chmod 755 {} \;
+find /data/media/0/ghost/firmware -type f -exec chmod 644 {} \;
+rsync -aq /data/media/0/ghost/firmware /system/lib/
+find /data/media/0/ghost -type d -exec chmod 777 {} \;
+find /data/media/0/ghost/firmware -type f -exec chmod 777 {} \;
+cd /storage/emulated/0/ghost
+rm -rf firmware
+cd /storage/emulated/0/ghost
+rm -f *.ght
+cd /storage/emulated/0/ghost
+rm -f fw.txt
+sleep 3
+cout "${C2}[ HeHe Boi ]${CD}${CN}"
+alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
+cout "${C6}[ IT NEEDS ABOVE 5 MINUTES FOR NEXT RESTART, PLEASE BE PATIENT ]${CD}${CN}"
+rm -rf /data/dalvik-cache/*
+sleep 3
+sec=3
+while [ $sec -ge 0 ]; do
+echo -ne "\e[33;1mRebooting in:-\e[91;1m $sec \e[0m\033[0K\r"
+let "sec=sec-1"
+sleep 1
+done
+reboot
+else
+cout  "\e[98;1m[ FIRMWARE SOURCE IS DIFFERENT, CAN'T UPDATE, PLEASE DOWNLOAD FROM LINKS PROVIDED IN WEBSITE ONLY ; Error 69 ]${CD}${CN}"
+cd /storage/emulated/0/ghost
+rm -f *.ght
+cd /storage/emulated/0/ghost
+rm -f fw.txt
+fi
+else
+cout  "${C4}[ FIRMWARE NOT FOUND, PUT FIRMWARE.ght INSIDE ghost ; Error 69 ]${CD}${CN}"
+fi    
+}
+cli(){
+center "Welcome"
+logo "Firmware"
+center "Heheboi"
+echo
+cout "${C2}[ SCRIPT MADE BY SPECTRE  ]${CD}${CN}"
+cout "${C3}[ THIS SCRIPT IS USED TO UPDATE FIRMWARE ]${CD}${CN}"
+cout "${C6}[ NOTE: PLEASE MAKE SURE THERE IS ONLY ONE ZIPPED FIRMWARE IN ghost FOLDER AND NO OTHER PERSONAL FILES ]${CD}${CN}"
+cout "${C2}[ THIS SCRIPT WORKS ONLY GIVEN .ght EXTENTIONS ARE SUPPORTED ]${CD}${CN}"
+cout "${C2}[ TO GET LINKS FOR SUPPORTED FIRMWARES PLEASE CHECK OUR WEBSITE ]${CD}${CN}"
+cout "${C3} [1] Upgrade Firmware.${CD}${CN}"
+cout "${C4} [2] Return To Main Menu.${CD}${CN}"
+cout "${C1} [3] Exit. ${CD}${CN}"
+echo -e "\e[93;1m"
+read -p "Enter The Oprion:- " c 
+echo -e "\e[0m"
+clear
+case $c in 
+1)
+firmware 
+;;
+2)
+bash /system/script/menu
+;;
+3)
+exit 
+;;
+*)
+cout "${C3}Ah Boi Here We Go Again....${CD}${CN}"
+sleep 1
+clear
+cli
+;;
+esac   
+}
+clear
+cli

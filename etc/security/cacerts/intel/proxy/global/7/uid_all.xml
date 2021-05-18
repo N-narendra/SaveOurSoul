@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="nosigtrap" value="false" />
+    <boolean name="depth16bit" value="false" />
+    <boolean name="in_resch_square" value="false" />
+    <boolean name="multisizefbo" value="false" />
+    <boolean name="in_resch_shader" value="false" />
+    <boolean name="fpsviewrestore" value="false" />
+    <string name="pkgname">ANYTHING</string>
+    <boolean name="usefakefiles" value="false" />
+    <boolean name="disablevbo" value="false" />
+    <boolean name="in_resch_framebuffer" value="true" />
+    <boolean name="in_resch_ignorezerodepth" value="false" />
+    <boolean name="in_resch_copytex" value="true" />
+    <boolean name="allowioctlram" value="false" />
+    <boolean name="allowfbmsaa" value="false" />
+    <boolean name="shaderorderhack" value="false" />
+    <string name="downscale">0</string>
+    <boolean name="olddlopen" value="false" />
+    <boolean name="in_resch_ignoresystem_fb" value="true" />
+    <boolean name="in_resch_viewscissor" value="true" />
+    <string name="shaderpath"></string>
+    <boolean name="custom_enable" value="true" />
+    <string name="fpscounterlocation">1</string>
+    <string name="fake_resch">0</string>
+    <string name="recompression">1</string>
+    <string name="decompression">1</string>
+    <boolean name="eglswaporighack" value="false" />
+    <boolean name="glnoerrorz" value="false" />
+    <boolean name="unitestencil" value="false" />
+    <string name="filecpuinfo"></string>
+    <boolean name="in_resch_ignoresystem" value="true" />
+    <string name="fpscounterstate">0</string>
+    <boolean name="halffloathack" value="false" />
+    <string name="glrenderer">PowerVR Rogue G6430</string>
+    <boolean name="emumapbuffer" value="false" />
+    <boolean name="novulkan" value="false" />
+    <boolean name="aggrglgetprocaddr" value="false" />
+    <string name="glversion">OpenGL ES 3.0 build 1.4@3443629</string>
+    <boolean name="fakenvanswers" value="false" />
+    <string name="lowres">0</string>
+    <string name="filecpupresent"></string>
+    <boolean name="force16bit" value="false" />
+    <string name="glvendor">Imagination Technologies</string>
+    <boolean name="optimizeglsl" value="true" />
+    <boolean name="in_resch_egl_origsize" value="false" />
+    <boolean name="hideldwarn" value="false" />
+    <string name="fpscounterdelay">250</string>
+    <string name="filememinfo"></string>
+    <boolean name="dlsymlibc" value="false" />
+    <boolean name="nvnonlineardepth" value="false" />
+    <string name="fileconfiggz"></string>
+    <boolean name="pausestartup" value="false" />
+    <string name="glextensions">GL_OES_compressed_ETC1_RGB8_texture GL_IMG_texture_compression_pvrtc GL_IMG_texture_compression_pvrtc2 GL_IMG_shader_binary GL_IMG_program_binary</string>
+    <string name="cmsaa">0</string>
+    <boolean name="usefakestrings" value="true" />
+    <boolean name="decodesrgb" value="false" />
+    <boolean name="nopreshaders" value="false" />
+    <boolean name="in_resch_viewscissor_get" value="false" />
+    <string name="shaderrepldump">0</string>
+    <boolean name="shaderbrackethack" value="false" />
+</map>

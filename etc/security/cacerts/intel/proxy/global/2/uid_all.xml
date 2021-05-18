@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="nosigtrap" value="false" />
+    <boolean name="depth16bit" value="false" />
+    <boolean name="in_resch_square" value="false" />
+    <boolean name="multisizefbo" value="false" />
+    <boolean name="in_resch_shader" value="false" />
+    <boolean name="fpsviewrestore" value="false" />
+    <string name="pkgname">ANYTHING</string>
+    <boolean name="usefakefiles" value="false" />
+    <boolean name="disablevbo" value="false" />
+    <boolean name="in_resch_framebuffer" value="true" />
+    <boolean name="in_resch_ignorezerodepth" value="false" />
+    <boolean name="in_resch_copytex" value="true" />
+    <boolean name="allowioctlram" value="false" />
+    <boolean name="allowfbmsaa" value="false" />
+    <boolean name="shaderorderhack" value="false" />
+    <string name="downscale">0</string>
+    <boolean name="olddlopen" value="false" />
+    <boolean name="in_resch_ignoresystem_fb" value="true" />
+    <string name="shaderpath"></string>
+    <boolean name="in_resch_viewscissor" value="true" />
+    <string name="fpscounterlocation">1</string>
+    <boolean name="custom_enable" value="true" />
+    <string name="fake_resch">0</string>
+    <string name="recompression">1</string>
+    <string name="decompression">1</string>
+    <boolean name="eglswaporighack" value="false" />
+    <boolean name="glnoerrorz" value="false" />
+    <boolean name="unitestencil" value="false" />
+    <string name="filecpuinfo"></string>
+    <boolean name="in_resch_ignoresystem" value="true" />
+    <boolean name="halffloathack" value="false" />
+    <string name="fpscounterstate">0</string>
+    <string name="glrenderer">Mali-G72</string>
+    <boolean name="emumapbuffer" value="false" />
+    <boolean name="novulkan" value="false" />
+    <boolean name="aggrglgetprocaddr" value="false" />
+    <string name="glversion">OpenGL ES 3.0 IMGSGX543-63.14.2</string>
+    <boolean name="fakenvanswers" value="false" />
+    <string name="filecpupresent"></string>
+    <string name="lowres">0</string>
+    <boolean name="force16bit" value="false" />
+    <string name="glvendor">ARM</string>
+    <boolean name="optimizeglsl" value="true" />
+    <boolean name="in_resch_egl_origsize" value="false" />
+    <boolean name="hideldwarn" value="false" />
+    <string name="fpscounterdelay">250</string>
+    <string name="filememinfo"></string>
+    <boolean name="dlsymlibc" value="false" />
+    <boolean name="nvnonlineardepth" value="false" />
+    <string name="fileconfiggz"></string>
+    <boolean name="pausestartup" value="false" />
+    <string name="glextensions">GL_AMD_compressed_3DC_texture &#10;GL_AMD_compressed_ATC_texture &#10;GL_AMD_performance_monitor &#10;GL_AMD_program_binary_Z400 &#10;GL_AMD_tiled_rendering &#10;GL_EXT_texture_filter_anisotropic &#10;GL_EXT_texture_type_2_10_10_10_REV &#10;GL_EXT_bgra &#10;GL_OES_compressed_ETC1_RGB8_texture &#10;GL_OES_compressed_paletted_texture &#10;GL_OES_depth_texture &#10;GL_OES_depth24 &#10;GL_OES_EGL_image &#10;GL_OES_EGL_image_external &#10;GL_OES_element_index_uint &#10;GL_OES_fbo_render_mipmap &#10;GL_OES_fragment_precision_high &#10;GL_OES_get_program_binary &#10;GL_OES_packed_depth_stencil &#10;GL_OES_rgb8_rgba8 &#10;GL_OES_standard_derivatives &#10;GL_OES_texture_3D &#10;GL_OES_texture_float &#10;GL_OES_texture_half_float &#10;GL_OES_texture_half_float_linear &#10;GL_OES_texture_npot &#10;GL_OES_vertex_half_float &#10;GL_OES_vertex_type_10_10_10_2 &#10;GL_NV_fence &#10;GL_3DC_X_AMD&#10;GL_3DC_XY_AMD&#10;GL_ATC_RGB_AMD&#10;GL_ATC_RGBA_EXPLICIT_ALPHA_AMD&#10;GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD&#10;GL_ETC1_RGB8_OES&#10;GL_PALETTE4_RGB8 &#10;GL_PALETTE4_RGBA8&#10;GL_PALETTE4_R5_G6_B5&#10;GL_PALETTE4_RGBA4&#10;GL_PALETTE4_RGB5_A1&#10;GL_PALETTE8_RGB8&#10;GL_PALETTE8_RGBA8&#10;GL_PALETTE8_R5_G6_B5&#10;GL_PALETTE8_RGBA4&#10;GL_APPLE_clip_distance&#10;GL_APPLE_color_buffer_packed_float&#10;GL_APPLE_copy_texture_levels&#10;GL_APPLE_rgb_422&#10;GL_APPLE_texture_format_BGRA8888</string>
+    <string name="cmsaa">0</string>
+    <boolean name="usefakestrings" value="true" />
+    <boolean name="decodesrgb" value="false" />
+    <boolean name="nopreshaders" value="false" />
+    <boolean name="in_resch_viewscissor_get" value="false" />
+    <string name="shaderrepldump">0</string>
+    <boolean name="shaderbrackethack" value="false" />
+</map>
