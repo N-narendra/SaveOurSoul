@@ -8,7 +8,7 @@ C5="\e[35;1m"
 C6="\e[36;1m"
 CD="\e[0m"
 img2folder(){
-if grep "system" | grep "type ext"; then
+if mount | grep "system" | grep "type ext"; then
 y=$(find /GhostRoot -maxdepth 4 -type f -name heheboi.nab)
 z=${y%/*}
 F=$z/system.img
