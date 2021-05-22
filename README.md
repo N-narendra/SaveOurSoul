@@ -36,7 +36,7 @@ https://github.com/busyloop/lolcat in ruby source.
 1) Special Thanks To PhoenixOS & PrimeOS Team and Android X86.
 2) SOS Coded By Narendra,Spectre & Daksh.
 3) Kernel,Mesa,Extreme Mode Etc...  Done By Spectre. 
-4) Thanks To ICY Where TO Contribute with his compiled Mesa and Kernel.
+4) Thanks To ICY for Screenrecord binary for extent recording time.
 
 Thanks to all GhostXofficial Members for the Support.! 
  
