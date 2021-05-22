@@ -1,0 +1,13 @@
+#!/system/bin/sh
+
+if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then 
+echo "1" #1 is for Internet as Connected Sucessfull.
+else
+echo "0" #0 is for Internet is disconnected.
+fi
+
+
+
+
+
+
