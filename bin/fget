@@ -1,0 +1,13 @@
+#!/bin/bash
+
+function urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
+
+     URL="$2"
+    wget -P "$1" -q --show-progress "$URL"  
+file=$(urldecode $URL | awk -F '/' '{print $6}'| cut -d ? -f1 )  
+if [ "$file" != "${file}?dl=0" ]; then
+mv "${file}?dl=0" "$file"
+else
+echo "404 not found"
+fi 
+
