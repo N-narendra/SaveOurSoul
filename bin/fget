@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Only Support Dropbox.
 function urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
 
      URL="$2"
