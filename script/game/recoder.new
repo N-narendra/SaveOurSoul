@@ -1,0 +1,86 @@
+#!/system/bin/bash
+C1="\e[31;1m";C2="\e[32;1m";C3="\e[33;1m";C4="\e[34;1m";C5="\e[35;1m";C6="\e[36;1m";CD="\e[0m\n";
+file=$(date +%T)
+gr(){
+    if [ -n /sdcard/sosrecoder ]; then
+    mkdir /sdcard/sosrecoder > /dev/null 2>&1 
+    fi 
+};
+sr(){
+    screenrecoder --size "$1" --bit-rate "$2" /sdcard/sosrecoder/sos_recoder_$file.mp4 >> /dev/null 2>&1
+}
+ui(){
+centre "Recorder-1.1"
+logo "Ghost-Recoder"
+centre "sos"
+echo
+cout "1]Start-Recorder."
+cout "2]Return-MainMenu."
+cout "3]Exit."
+echo -e "\e[93;1mEnter Your choice:- \c\e[0m";read c;
+case $c in
+1)
+cout "Select Your Resolution."
+cout "1]Pre-set Resolution."
+cout "2]Custom-Resolution."
+echo -e "\e[93;1mEnter Your Choice:- \c\e[0m";read c;
+if [ "$c" == "1" ]; then
+echo -e "${C3}1] 1280x720(720p) & 4M bit-rate(default by Source).${CD}"
+echo -e "${C3}2] 1366x720(720p) & 2M bit-rate.${CD}"
+echo -e "${C3}3] 1980x1080(1080p) & 2M bit-rate.${CD}"
+echo -e "${C3}4] 854x480(480p) & 3M bit-rate.${CD}"
+echo -e "${C3}5] 640x360(360p) & 3M bit-rate.${CD}"
+echo -e "\e[92;1mEnter The Option Given Above:-\c\e[0m";read c;
+case $c in 
+1)
+cout "Recording Start with 1280x720p of 4M bit-rate."
+sleep 1
+cout "Recording Saved at /emulated/0/sosrecoder."
+cout "To Stop Recording Press Ctrl+c To Stop."
+sr "1280x720" "4000000"
+;;
+2)
+cout "Recording Start with 1366x720p of 2M bit-rate."
+sleep 1
+cout "Recording Saved at /emulated/0/sosrecoder."
+cout "To Stop Recording Press Ctrl+c To Stop."
+sr "1366x720" "2000000"
+;;
+3)
+cout "Recording Start with 1980x1080p of 2M bit-rate."
+sleep 1
+cout "Recording Saved at /emulated/0/sosrecoder."
+cout "To Stop Recording Press Ctrl+c To Stop."
+sr "1366x720" "2000000"
+;;
+4)
+3)
+cout "Recording Start with 854x480p of 2M bit-rate."
+sleep 1
+cout "Recording Saved at /emulated/0/sosrecoder."
+cout "To Stop Recording Press Ctrl+c To Stop."
+sr "854x480" "3000000"
+;;
+5)
+cout "Recording Start with 640x360p of 2M bit-rate."
+sleep 1
+cout "Recording Saved at /emulated/0/sosrecoder."
+cout "To Stop Recording Press Ctrl+c To Stop."
+sr "640x360" "3000000"
+;;
+esac
+elif [ "$c" == "2" ]; then 
+echo -e "\e[92;1mEnter The Resoultion(ex:- 1024x720):- \c\e[0m\n";read res;
+echo -e "\e[93;1mEnter The Bit-rate(ex:- 2):- \c\e[0m\n";read bit;
+sr "$res" "((1000000 * $bit))"
+fi
+;;
+2) ;;
+3) ;;
+*)
+clear;sleep 0.2;
+echo -e "${C2}Wrong Input Please Enter Correct Option...!${CD}";
+sleep 1.2;ui;;
+esac   
+};
+

@@ -1,4 +1,4 @@
-#!/system/bin/bash
+#!/system/bin/bash #indeed to delete
 center "Welcome"
 logo "CZFM"
 center "Heheboi"

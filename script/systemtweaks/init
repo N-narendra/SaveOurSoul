@@ -7,12 +7,12 @@ C5="\e[35;1m"
 C6="\e[36;1m"
 CD="\e[0m"
 init(){
-mv -f /data/media/0/spectre/init.sh /system/etc/
+mv -f /data/media/0/ghost/init.sh /system/etc/
 cd /system/etc
 chmod 755 init.sh
-cout  "${C3}[ HeHe Boi ]${CD}${CN}"
+cout  "[ HeHe Boi ]"
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
-cout  "${C3}[ REBOOTING ]${CD}${CN}"
+cout  "[ REBOOTING ]"
 reboot
 }
 cli(){
@@ -20,13 +20,13 @@ center "Welcome"
 logo "Init-Fixer"
 center "Heheboi"
 echo 
-cout "${C3}[ SCRIPT MADE BY SPECTRE ]${CD}${CN}"
-cout "${C3}[ THIS SCRIPT IS USED TO LOAD ALSA PROFILE, LOAD WIFI MODULE (IF EXIST IN KERNEL) ETC. ]${CD}${CN}"
-cout "${C3}[ CAUTION: DON'T USE init.sh FILE FROM OTHER SOURCE, ASK Ghost TEAM ]${CD}${CN}"
-cout "${C3}[ COPY init.sh FILE TO spectre FOLDER ]${CD}${CN}"
-cout "${C2} [1] Init_fix.${CD}${CN}"
-cout "${C4} [2] Return To Main-menu.${CD}${CN}"
-cout "${C1} [3] Exit.${CD}${CN}"
+cout "[ SCRIPT MADE BY SPECTRE ]"
+cout "[ THIS SCRIPT IS USED TO LOAD ALSA PROFILE, LOAD WIFI MODULE (IF EXIST IN KERNEL) ETC. ]"
+cout "[ CAUTION: DON'T USE init.sh FILE FROM OTHER SOURCE, ASK Ghost TEAM ]"
+cout "[ COPY init.sh FILE TO ghost FOLDER ]"
+cout "1] Init_fix."
+cout "2] Return To Main-menu."
+cout "3] Exit."
 echo -e "\e[93;1m"
 read -p "Enter The option:- " c 
 echo -e "\e[0m"
@@ -42,7 +42,7 @@ bash /system/script/menu
 exit 
 ;;
 *)
-cout "${C3}Ah Boi Here We Go Again....${CD}${CN}"
+cout "Ah Boi Here We Go Again....!"
 sleep 1
 clear 
 cli 

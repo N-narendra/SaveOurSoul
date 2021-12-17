@@ -7,11 +7,11 @@ C5="\e[35;1m"
 C6="\e[36;1m"
 CD="\e[0m"
 dalvik(){
-cout "${C6}[ CLEARING DALVIK CACHE ]${CD}${CN}"
-cout "${C6}[ IT NEEDS ABOVE 5 MINUTES FOR NEXT RESTART, PLEASE BE PATIENT ]${CD}${CN}"
+cout "[ CLEARING DALVIK CACHE ]"
+cout "[ IT NEEDS ABOVE 5 MINUTES FOR NEXT RESTART, PLEASE BE PATIENT ]"
 rm -rf /data/dalvik-cache/*
 sleep 3
-cout "${C3}[ HeHe Boi ]${CD}${CN}"
+cout "[ HeHe Boi ]" &
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
 sec=3
 while [ $sec -ge 0 ]; do
@@ -22,29 +22,29 @@ done
 reboot    
 }
 cache(){
-cout "${C1}[ CLEARING APP CACHE ]${CD}${CN}"
+cout "[ CLEARING APP CACHE ]"
 cd /data/data
 find . -name cache -type d -exec rm -rf {} +
 cd /data/media/0/Android/data
 find . -name cache -type d -exec rm -rf {} +
 sleep 3
-cout "${C2}[ HeHe Boi ]${CD}${CN}"
+cout "[ HeHe Boi ]" &
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
-cout "${C3}[ Press ALT+F7 or ALT+FN+F7 to Exit ]${CD}${CN}"
+cout "[ Press ALT+F7 or ALT+FN+F7 to Exit ]"
 }
 cli(){
 center "Welcome"
 logo "Clear-Cache/Dalvik"
 center "Heheboi" 
 echo 
-cout "${C2}[ MADE BY SPECTRE ]${CD}${CN}"
-cout "${C3}[ THIS SCRIPT IS USED TO CLEAR CACHE  ]${CD}${CN}"
-cout "${C2}[ CAUTION: DONT USE THIS SCRIPT UNNECESSARILY , USE ONLY WHEN YOUR SYSTEM BECAME EXTREMELY LAGGY ]${CD}${CN}"
-cout "${C2}[ Select the options below ]${CD}${CN}"
-cout "${C3} [1] CLEAR DALVIK CACHE  ${CD}${CN}"
-cout "${C4} [2] CLEAR APP CACHE ${CD}${CN}"
-cout "${C5} [3] Return To Main Menu.${CD}${CN}"
-cout "${C1} [4] Exir.${CD}${CN}"
+cout "[ MADE BY SPECTRE ]"
+cout "[ THIS SCRIPT IS USED TO CLEAR CACHE  ]"
+cout "[ CAUTION: DONT USE THIS SCRIPT UNNECESSARILY , USE ONLY WHEN YOUR SYSTEM BECAME EXTREMELY LAGGY ]"
+cout "[ Select the options below ]"
+cout "1] CLEAR DALVIK CACHE."
+cout "2] CLEAR APP CACHE."
+cout "3] Return To Main Menu."
+cout "4] Exir."
 echo -e "\e[93;1m"
 read -p "Enter The Option:- " c 
 echo -e "\e[0m"
@@ -63,7 +63,7 @@ bash /system/script/menu
 exit 
 ;;
 *)
-cout "${C3}Ah Boi Here We Go Again....${CD}${CN}"
+cout "Ah Boi Here We Go Again....!"
 sleep 1
 clear 
 cli 

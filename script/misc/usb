@@ -11,7 +11,7 @@ ip link set eth1 name eth0
 sleep 0.1
 ifconfig eth0 up
 sleep 0.1 
-cout "Heheboi..!"
+cout "Heheboi..!" &
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
 echo
 cout "Press Alt+f7 TO close Terminal..!"

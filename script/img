@@ -13,17 +13,17 @@ y=$(find /GhostRoot -maxdepth 4 -type f -name heheboi.nab)
 z=${y%/*}
 F=$z/system.img
 if [ -f "$F" ]; then
-cout "${C3}[ System.img is being converted To System Folder... ]${CD}${CN}"
+cout "[ System.img is being converted To System Folder... ]"
 echo -e "${C6}          Progress   ${C5}   Speed     ${C3}   Time${CD}${CN}"
 rsync -ah --info=progress2 /system $z  
 sleep 1
 cout " "
-cout "${C3}[ Removing system.img ]${CD}${CN}"
+cout "[ Removing system.img ]"
 rm -r $z/system.img 
-cout "${C5}[ Finishing up... ]${CD}${CN}"
+cout "[ Finishing up... ]"
 sync
 sleep 0.6
-cout "${C3}[ Heheboi........]${CD}${CN}"
+cout "Heheboi....!" &
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
 sec=5
 while [ $sec -ge 0 ]; do
@@ -33,8 +33,8 @@ sleep 1
 done
 reboot
 else
-cout "${C4}[ System folder already Exists... ]${CD}${CN}"
-cout "${C3}[ Press Alt + f7  To close Terminal...]${CD}${CN}"
+cout "[ System folder already Exists ]"
+cout "[ Press Alt + f7  To close Terminal...]"
 fi
 else 
 cout "Cant Be Img2Folder Because your in Ntfs Partition.!"
@@ -43,21 +43,21 @@ fi
 folder2ext4(){
 y=$(find /GhostRoot -maxdepth 4 -type f -name heheboi.nab)
 z=${y%/*}  
-cout "${C2}Checking ${C6}Img2Folder${CD}${C3}form....${CD}${CN}"
+cout "Checking Img2Folder form....!"
 F=$z/system 
 if [ -d "$F" ]; then
-cout "${C2} System_Folder Found....${CD}${CN}"
-cout "${C3} Converting To image....${CD}${CN}"
+cout "System_Folder Found....!"
+cout "Converting To image....!"
 mkdir -m777 /sdcard/imgm
 mkdir /sdcard/img
 sleep 1
-cout "${C4}Creating Empty Image file....${CD}${CN}"
+cout "Creating Empty Image file....!"
 dd if=/dev/zero of=/sdcard/img/system.img bs=1M count=4096 > /dev/null 2>&1
 echo 
-cout "${C3}Ext4_System.img Done..${CD}${CN}"
+cout "Ext4_System.img Done...!"
 sleep 1
 clear 
-cout "${C5}Moving System_Folder in image....(Press y To Start Process....)${CD}${CN}"
+cout "Moving System_Folder in image....(Press y To Start Process....)."
 cout " "
 mke2fs -t ext4  /sdcard/img/system.img 
 echo
@@ -69,14 +69,14 @@ echo -e "${C6}          Progress   ${C5}   Speed     ${C3}   Time${CD}${CN}"
 rsync -ah --info=progress2 /system/* /sdcard/imgm 
 umount /sdcard/imgm
 cout ""
-cout "${C3}Heheboi${CD}${CN}"
+cout "Heheboi..!" &
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
-cout "${C4}Moving system.img In Ext4_Partition.${CD}${CN}"
+cout "Moving system.img In Ext4_Partition."
 mv /sdcard/img/system.img $z 
-cout "${C3}Moved.${CD}${CN}"
+cout "Successfully Moved to ext4_partition..!"
 rmdir /sdcard/img
 rmdir /sdcard/imgm 
-cout "${C6}Boot Linux/Windows And Go To Ext4_partition Delete ${C1}System_Folder${CD}.${CD}${CN}"
+cout "Boot Linux/Windows And Go To Ext4_partition Delete System_Folder."
 sleep 2
 sec=5
 while [ $sec -ge 0 ]; do
@@ -86,7 +86,7 @@ sleep 1
 done
 reboot
 else
-cout "${C1}System.img already Thier In Ext4 Partition.${CD}${CN}" 
+cout "System.img already Thier In Ext4 Partition." 
 fi
 }
 #CLI
@@ -95,13 +95,13 @@ clear
 center "Welcome"
 logo "Img2Folder" 
 center "Heheboi"
-cout "${C6}Made By Narendra From GhostX Official.${CD}${CN}"   
-cout "${C3}Img2Folder${CD}/${C5}Ext4_to_Img${CD}${CN}"
-cout "${C3}Please Select Your option Here${CD}${CN}"
-cout "${C2} [1] Img2Folder.${CD}${CN}"
-cout "${C3} [2] Folder2Img.${CD}${CN}"
-cout "${C4} [3] Return TO Main_Menu.${CD}${CN}"
-cout "${C1} [4] Exit.${CD}${CN}"
+cout "Made By Narendra From GhostX Official."   
+cout "Img2Folder /${C5}Ext4_to_Img.${CD}${CN}"
+cout "Please Select Your option Here."
+cout "1] Img2Folder."
+cout "2] Folder2Img."
+cout "3] Return TO Main_Menu."
+cout "4] Exit."
 echo -e "\e[93;1m"
 read -p "Enter the Option:- " c 
 echo -e "\e[0m"
@@ -121,7 +121,7 @@ exit 2
 ;;
 *)
 clear
-cout "${C3}AHH Boi Here We Go Again.....${CD}${CN}"
+cout "AHH Boi Here We Go Again.....!"
 sleep 1
 cli 
 ;;

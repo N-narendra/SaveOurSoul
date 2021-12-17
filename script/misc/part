@@ -8,7 +8,7 @@ C6="\e[36;1m"
 blkid_mount(){    
 bd=$(blkid -o "device"| grep -v loop)   
 bm=$(blkid -s "TYPE" -s "LABEL" | grep -v loop) 
-cout "${C3}List Of Partition For Mount.${CD}${CN}"
+cout "List Of Partition to Mount."
 echo -e "\e[96;1m"
 blkid -o "list"
 echo -e "\e[0m"
@@ -16,12 +16,12 @@ cout "${C3}Select Partition To Mount${CD}${CN}"
 echo -e "\e[96;1m"
 select Partition in ${bd}; 
 do 
-cout "${C4}Mounting Partition is ${Partition}";
+cout "Mounting Partition is ${Partition}";
 mkdir -m777 /sdcard/sosmount > /dev/null 2>&1
 mount  $Partition /sdcard/sosmount/ 
 echo
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
-cout "${C2}Partition Mounted On /sdcard/ghostmount ${CD}${CN}"
+cout "Partition Mounted On /sdcard/sosmount."
 break;
 done
 }
@@ -30,9 +30,9 @@ center "welcome"
 logo "Partition"
 center "Heheboi"  
 echo  
-cout "${C3}[1] Partition Mounter.${CD}${CN}"
-cout "${C4}[2] Return To Menu.${CD}${CN}"
-cout "${C1}[3] Exit.${CD}${CN}"
+cout "1] Partition Mounter."
+cout "2] Return To Menu."
+cout "3] Exit."
 echo -e "\e[93;1m"
 read -p "Enter Your Choice:- " c 
 echo -e "\e[0m"
@@ -48,7 +48,7 @@ bash /system/script/menu
 exit 
 ;;
 *)
-cout "${C3}Ah Boi Here We Go Again.${CD}${CN}"
+cout "Ah Boi Here We Go Again."
 sleep 0.8
 clear 
 cli 

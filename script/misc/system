@@ -10,15 +10,15 @@ y=$(find /GhostRoot -maxdepth 4 -type f -name heheboi.nab)
 z=${y%/*}    
 F=$z/system.img
 if [ -d $z/system ]; then 
-cout "${C1}System Folder Form Please Do Folder2Img.!${CN}${CD}"
+cout "System Folder has been Found, Please Do Folder2Img...!"
 exit
 else  
-cout "${C2}System.img is Found Please choose your size To increase..!${CN}${CD}"
-cout "${C3}1] 5 GB.${CN}${CD}"
-cout "${C2}2] 6 GB. ${CN}${CD}"
-cout "${C6}3] Custom size ${CN}${CD}"
-cout "${C5}4] Return to Main Menu.${CN}${CD}"
-cout "${C1}5] Exit.${CN}${CD}"
+cout "System.img is Found Please choose your size To increase..!"
+cout "1] 5 GB."
+cout "2] 6 GB."
+cout "3] Custom size."
+cout "4] Return to Main Menu."
+cout "5] Exit."
 echo -e "\e[93;1m"
 read -p "Enter Your Option >>> " c 
 echo -e "\e[0m"
@@ -26,25 +26,25 @@ case $c in
 1)
 mkdir -m755 /sdcard/systmp 
 mkdir -m755 /sdcard/sysmnt 
-cout "${C3}Creating 5 Gb Size System.img${CN}${CD}"
+cout "Creating 5 Gb Size of System.img."
 dd if=/dev/zero of=/sdcard/systmp/system.img bs=1M count=5120 > /dev/null 2>&1 
-cout "${C4}System.img Created..! Press "y" For Formant New System.img As ext4${CN}${CD}"
+cout "System.img Created..! Press "y" For Formant New System.img As ext4."
 mke2fs -t ext4 /sdcard/systmp/system.img 
-cout "${C5}Mountind System.img To Transfer old data to New System.img.${CN}${CD}"
+cout "Mountind System.img To Transfer old data to New System.img."
 mount /sdcard/systmp/system.img /sdcard/sysmnt/ 
 sleep 0.5
 clear
 echo -e "${C6}          Progress   ${C5}   Speed     ${C3}   Time${CD}${CN}"
 rsync -ah --info=progress2 /system/* /sdcard/sysmnt/ 
 umount /sdcard/sysmnt
-cout "${C3}Heheboi${CD}${CN}"
+cout "Heheboi..!" & 
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
-cout "${C4}Moving system.img In Ext4_Partition.${CD}${CN}"
+cout "Moving system.img In Ext4_Partition."
 mv /sdcard/systmp/system.img $z/new.img  
-cout "${C3}Moved.${CD}${CN}"
+cout "Succesfully Moved to Ext4_partition."
 rmdir /sdcard/sysmnt
 rmdir /sdcard/systmp
-cout "${C6}Renaming Old system.img To system.bak ${C1}${CD}For Safety.${CD}${CN}"
+cout "Renaming Old system.img To system.bak ${C1}${CD}For Safety.${CD}${CN}"
 mv $z/system.img $z/system.bak 
 mv $z/new.img $z/system.img
 sleep 2
@@ -58,12 +58,12 @@ reboot ;;
 2)
 mkdir -m755 /sdcard/systmp 
 mkdir -m755 /sdcard/sysmnt 
-cout "${C3}Creating 6 Gb Size System.img${CN}${CD}"
+cout "Creating 6 Gb Size of System.img."
 dd if=/dev/zero of=/sdcard/systmp/system.img bs=1M count=6144 > /dev/null 2>&1 
-cout "${C4}System.img Created..! Press "y" For Formant New System.img As ext4${CN}${CD}"
+cout "System.img Created..! Press "y" For Formant New System.img As ext4."
 cout " "
 mke2fs -t ext4 /sdcard/systmp/system.img 
-cout "${C5}Mountind System.img To Transfer old data to New System.img.${CN}${CD}"
+cout "Mountind System.img To Transfer old data to New System.img."
 mount /sdcard/systmp/system.img /sdcard/sysmnt/ 
 sleep 0.5
 clear
@@ -71,14 +71,14 @@ echo -e "${C6}          Progress   ${C5}   Speed     ${C3}   Time${CD}${CN}"
 rsync -a --info=progress2 /system/* /sdcard/sysmnt/ 
 umount /sdcard/sysmnt
 cout " "
-cout "${C3}Heheboi${CD}${CN}"
+cout "Heheboi..!" &
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
-cout "${C4}Moving system.img In Ext4_Partition.${CD}${CN}"
+cout "Moving system.img In Ext4_Partition."
 mv /sdcard/systmp/system.img $z/new.img  
-cout "${C3}Moved.${CD}${CN}"
+cout "Succesfully moved to Ext4_partition."
 rmdir /sdcard/sysmnt
 rmdir /sdcard/systmp
-cout "${C6}Renaming Old system.img To system.bak ${C1}${CD}For Safety.${CD}${CN}"
+cout "Renaming Old system.img To system.bak For Safety."
 mv $z/system.img $z/system.bak 
 mv $z/new.img $z/system.img
 sleep 2
@@ -92,16 +92,16 @@ reboot ;;
 3)
 mkdir -m755 /sdcard/systmp 
 mkdir -m755 /sdcard/sysmnt 
-cout "${C3}Enter You Custom size...!${CN}${CD}"
+cout "Enter You Custom size...!"
 read -p "Size Of system.img In GB Example( 4 )" size 
 s=$(($size * 1024))
 echo 
-cout "${C3}Creating "$s" Gb Size System.img${CN}${CD}"
+cout "Creating "$s" Gb Size System.img."
 dd if=/dev/zero of=/sdcard/systmp/system.img bs=1M count=$s > /dev/null 2>&1 
-cout "${C4}System.img Created..! Press "y" For Formant New System.img As ext4${CN}${CD}"
+cout "System.img Created..! Press "y" For Formant New System.img As ext4."
 cout " "
 mke2fs -t ext4 /sdcard/systmp/system.img 
-cout "${C5}Mountind System.img To Transfer old data to New System.img.${CN}${CD}"
+cout "Mountind System.img To Transfer old data to New System.img."
 mount /sdcard/systmp/system.img /sdcard/sysmnt/ 
 sleep 0.5
 clear
@@ -109,14 +109,14 @@ echo -e "${C6}          Progress   ${C5}   Speed     ${C3}   Time${CD}${CN}"
 rsync -a --info=progress2 /system/* /sdcard/sysmnt/ 
 umount /sdcard/sysmnt
 cout " "
-cout "${C3}Heheboi${CD}${CN}"
+cout "Heheboi..!" &
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
-cout "${C4}Moving system.img In Ext4_Partition.${CD}${CN}"
+cout "Moving system.img In Ext4_Partition."
 mv /sdcard/systmp/system.img $z/new.img  
-cout "${C3}Moved.${CD}${CN}"
+cout "Succesfully Moved to Ext4 Partition."
 rmdir /sdcard/sysmnt
 rmdir /sdcard/systmp
-cout "${C6}Renaming Old system.img To system.bak ${C1}${CD}For Safety.${CD}${CN}"
+cout "Renaming Old system.img To system.bak For Safety."
 mv $z/system.img $z/system.bak 
 mv $z/new.img $z/system.img
 sleep 2
@@ -133,7 +133,7 @@ bash /system/script/menu ;;
 exit ;;
 *)
 clear
-cout "${C3}Ah Boi Here We Go Again...${CN}${CD}"
+cout "Ah Boi Here We Go Again...!"
 sleep 2
 sys ;;
 esac 
@@ -145,11 +145,11 @@ center "Welcome"
 logo "System.img Reszier"
 center "Heheboi" 
 echo  
-cout "${C3}System ReSizer....!${CN}${CD}"
-cout "${C2}Select Your Option...!${CN}${CD}"
-cout "${C4}1] System-Resize.!${CN}${CD}"
-cout "${C5}2] Return To Main Menu.!${CN}${CD}"
-cout "${C1}3] Exit.!${CN}${CD}"
+cout "System ReSizer....!"
+cout "Select Your Option...!"
+cout "1] System-Resize..!"
+cout "2] Return To Main Menu..!"
+cout "3] Exit..!"
 echo -e "\e[93;1m"
 read -p "Enter your Option >> " c 
 echo -e "\e[0m"
@@ -162,7 +162,7 @@ bash /system/script/misc/system ;;
 exit ;;
 *)
 clear 
-cout "${C3}AH Boi Here We Go Again...!${CN}${CD}"
+cout "AH Boi Here We Go Again...!"
 sleep 2
 cli ;;
 esac

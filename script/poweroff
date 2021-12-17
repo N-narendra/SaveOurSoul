@@ -68,7 +68,7 @@ bash /system/script/menu
 exit
 ;;
 *)
-cout "Ah Boi Here We Go Again..."
+cout "Ah Boi Here We Go Again...!"
 sleep 1
 clear
 cli

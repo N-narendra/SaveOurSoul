@@ -5,29 +5,29 @@ center "Welcome To Sos"
 logo "Main-Menu"
 center "Heheboi"
 echo 
-cout "                                                             \e[94;1;3;107m[ Main Menu Of (sos) ]\e[0m"
+cout "[ Main Menu Of (sos) ]"
 sleep 0.1
-cout "                                                              \e[93;1m [1] Extreme Mode. \e[0m"
+cout "[1] Extreme Mode."
 sleep 0.1
-cout "                                                              \e[92;1m [2] Game-Center. \e[0m"
+cout "[2] Game-Center."
 sleep 0.1
-cout "                                                              \e[94;1m [3] Img2Folder/Folder2Img.\e[0m"
+cout "[3] Img2Folder/Folder2Img."
 sleep 0.1
-cout "                                                              \e[92;1m [4] Miscellaneous functions.\e[0m"
+cout "[4] Miscellaneous functions."
 sleep 0.1
-cout "                                                              \e[92;1m [5] Performance Tweaks.\e[0m"
+cout "[5] Performance Tweaks."
 sleep 0.1
-cout "                                                              \e[92;1m [6] System Tweaks.\e[0m"
+cout "[6] System Tweaks."
 sleep 0.1
-cout "                                                              \e[93;1m [7] Update Kernel.\e[0m"
+cout "[7] Update Kernel."
 sleep 0.1
-cout "                                                              \e[94;1m [8] Update Mesa. \e[0m"
+cout "[8] Update Mesa."
 sleep 0.1
-cout "                                                              \e[93;1m [9] Auto-Timer PowerOff.\e[0m"
+cout "[9] Auto-Timer PowerOff."
 sleep 0.1
-cout "                                                              \e[91;1m [e] Exit from sos. \e[0m"
+cout "[e] Exit from sos."
 sleep 0.1
-echo -e "                                                                 \e[91;1m[a]About_MOD\e[0m\e[0m"  
+echo -e "[a]About_MOD."  
 echo -e "\e[93;1m"
 read -p "Enter your Option :- " c 
 echo -e "\e[0m"
@@ -43,35 +43,24 @@ center "Welcome"
 logo "Game-Center"
 center "Heheboi"
 echo 
-cout "\e[92;1m[1] PUBGM ( BACKUP & RESTORE)\e[0m" 
-cout "\e[93;1m[2] PUBG Refresher.\e[0m" 
-cout "\e[94;1m[3] Ghost Recoder(video only).\e[0m"
-cout "\e[96;1m[4] Keymapper ( Backup & Restore).\e[0m" 
-cout "\e[95;1m[5] Return To Main Menu.\e[0m" 
-cout "\e[91;1m[6] Exit.\e[0m" 
+cout "1] Ghost Recoder(video only)."
+cout "2] Return To Main Menu." 
+cout "3] Exit." 
 echo -e "\e[93;1m"
 read -p "Enter The Option:- " c 
 echo -e "\e[0m"
 clear 
 case $c in 
 1)
-bash /system/script/game/pubg
-;;
-2)
-bash /system/script/game/pubgrefresher 
-;;
-3)
 bash /system/script/game/recoder 
 ;;
-4)
-bash /system/script/game/key ;;
-5)
+2)
 bash /system/script/menu ;; 
-6)
+3)
 exit 
 ;;
 *)
-cout "\e[93;1mAH Boi Here We Go Again.\e[0m"
+cout "AH Boi Here We Go Again."
 sleep 0.7
 clear 
 game
@@ -89,13 +78,13 @@ center "Welcome"
 logo "Miscellaneous"
 center "Heheboi"
 echo 
-cout "\e[92;1m[1]Partition Mounter.\e[0m"
-cout "\e[93;1m[2]Data Re-size.\e[0m" 
-cout "\e[95;1m[3]System Re-size.\e[0m" 
-cout "\e[92;1m[4]Google Service.\e[0m"
-cout "\e[94;1m[5]Tablet Mode Or Desktop Mode. \e[0m" 
-cout "\e[93;1m[6]Return To Main menu.\e[0m"
-cout "\e[91;1m[7]Exit.\e[0m"
+cout "1]Partition Mounter."
+cout "2]Data Re-size." 
+cout "3]System Re-size." 
+cout "4]Google Service."
+cout "5]Tablet Mode Or Desktop Mode." 
+cout "6]Return To Main menu."
+cout "7]Exit."
 echo -e "\e[93;1m"
 read -p "Enter The Option:- " c 
 echo -e "\e[0m"
@@ -119,7 +108,7 @@ bash /system/script/menu
 exit 
 ;;
 *)
-cout "\e[93;1mAh Boi Here We Go Again.\e[0m"
+cout "Ah Boi Here We Go Again."
 sleep 0.7
 clear 
 misc
@@ -136,13 +125,13 @@ center "Welcome"
 logo "System-Tweaks"
 center "Heheboi"
 echo 
-cout "\e[94;1m[1]Animations.\e[0m" 
-cout "\e[95;1m[2]Cache.\e[0m"
-cout "\e[96;1m[3]Firmware.\e[0m" 
-cout "\e[93;1m[4]Init-Fix.\e[0m"
-cout "\e[92;1m[5]Resolution.\e[0m"
-cout "\e[93;1m[6]Return Main Menu.\e[0m"
-cout "\e[91;1m[e]Exit.\e[0m"
+cout "1]Animations." 
+cout "2]Cache."
+cout "3]Firmware." 
+cout "4]Init-Fix."
+cout "5]Resolution."
+cout "6]Return Main Menu."
+cout "[e]Exit."
 echo 
 echo -e "\e[93;1m"
 read -p "Enter The Option Here:- " c 
@@ -172,7 +161,7 @@ e)
 exit 
 ;;
 *)
-cout "\e[93;1mAh Boi Here We go Again....\e[0m"
+cout "Ah Boi Here We go Again....!"
 sleep 0.7
 clear 
 system_tweaks
@@ -208,19 +197,19 @@ fi
 if [ -f /system/etc/sounds/sos.sos ]; then 
 mv /system/etc/sounds/sos.sos /system/etc/sounds/sos.bak > /dev/null 2>&1
 mv /system/etc/sounds/done.sos /system/etc/sounds/done.bak > /dev/null 2>&1
-cout "\e[93;1m Sound Off..!\e[0m"
+cout "Sound Off..!"
 sleep 1
 menu 
 else 
 mv /system/etc/sounds/sos.bak /system/etc/sounds/sos.sos > /dev/null 2>&1  
 mv /system/etc/sounds/done.bak /system/etc/sounds/done.sos > /dev/null 2>&1
-cout "\e[93;1m Sound On..!\e[0m"
+cout "Sound On..!"
 sleep 1
 menu 
 fi
 ;;
 *)
-cout "\e[93;1mAh Boi Here We Go Again..\e[0m"
+cout "Ah Boi Here We Go Again..!"
 sleep 1
 clear 
 menu 

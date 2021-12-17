@@ -7,59 +7,59 @@ C5="\e[35;1m"
 C6="\e[36;1m"
 CD="\e[0m"
 resolution(){
-cout "${C2}[ Your choice is Set Resolution. ]${CD}${CN}" 
-cout "${C6}[ Current is [ $sc ].${CD}${CN}"
+cout "[ Your choice is Set Resolution. ]" 
+cout "[ Current is [ $sc ]."
 echo -e "\e[92;1m"
 read -p "Enter The wight_and_Higth [Example:-1024x768]:- " R
 echo -e "\e[0m" 
-cout "${C3}[ resolution is "$R" .]${CD}${CN}" 
+cout "[ resolution is "$R" .]" 
 wm size $R
-cout "${C2}[ Heheboi. ]${CD}${CN}"
+cout "Heheboi." &
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
-cout "${C3}[ Press Alt+f7 To close Termianl. ]${CD}${CN}"  
+cout "[ Press Alt+f7 To close Termianl. ]"  
 }
 resolution_reset(){
-cout "${C2}[ Your choice is rest Resolution .]${CD}${CN}"
+cout "[ Your choice is rest Resolution .]"
 wm size reset
-cout "${C3}[ HeHeboi. ]${CD}${CN}"
+cout "HeHeboi." &
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
-cout "${C3}[ Press Alt+f7 To close Termianl. ]${CD}${CN}"    
+cout "[ Press Alt+f7 To close Termianl.]"    
 }
 dpi(){
-cout "${C2}[ Your choice is Set Density [dpi]. ]${CD}${CN}" 
-cout "${C6}[ Current is [ $dc ].${CD}${CN}"
+cout "[ Your choice is Set Density [dpi]. ]" 
+cout "[ Current is [ $dc ]"
 echo -e "\e[93;1m"
 read -p "Enter The [dpi] [Example:-120]:- " R
 echo -e "\e[0m"  
-cout "${C3}[ resolution is "$R" .]${CD}${CN}" 
+cout "[ resolution is "$R" .]" 
 wm density $R
-cout "${C2}[ Heheboi. ]${CD}${CN}"
+cout "Heheboi" &
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
-cout "${C3}[ Press Alt+f7 To close Termianl. ]${CD}${CN}"
+cout "[ Press Alt+f7 To close Termianl. ]"
 }
 dpi_reset(){
-cout "${C2}[ Your choice is rest density .]${CD}${CN}"
+cout "[ Your choice is rest density .]"
 wm density reset
-cout "${C3}[ HeHeboi. ]${CD}${CN}"
+cout "HeHeboi."
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
-cout "${C3}[ Press Alt+f7 To close Termianl. ]${CD}${CN}"    
+cout "[ Press Alt+f7 To close Termianl. ]"    
 }
 cli(){
 center "Welcome"
 logo "Resolution"
 center "Heheboi"  
 echo   
-cout "${C2}[ Custom Resolution changer. ]${CD}${CN}"
-cout "${C6}[ Made By Narendra From Ghost team ]${CD}${CN}"
+cout "[ Custom Resolution changer. ]"
+cout "[ Made By Narendra From Ghost team ]"
 sc=$(cat /system/status/display.txt)
 dc=$(cat /system/status/density.txt)
-cout "${C5}[ Choose The Action here ]${CD}${CN}"
-cout "${C2} [1] Set resolution. ${CD}${CN}"
-cout "${C3} [2] Reset resolution. ${CD}${CN}"
-cout "${C4} [3] Set density [dpi]. ${CD}${CN}"
-cout "${C5} [4] Reset density [dpi]. ${CD}${CN}"
-cout "${C6} [5] Return to main menu. ${CD}${CN}"
-cout "${C1} [6] Exit. ${CD}${CN}"
+cout "[ Choose The Action here ]"
+cout "1] Set resolution."
+cout "2] Reset resolution."
+cout "3] Set density [dpi]."
+cout "4] Reset density [dpi]."
+cout "5] Return to main menu."
+cout "6] Exit."
 echo -e "\e[93;1m"
 read -p "choose your option :- " c
 echo -e "\e[0m"   
@@ -84,7 +84,7 @@ bash /system/script/menu
 exit 
 ;;
 *)
-cout "${C3}Ah Boi Here We Go Again....${CD}${CN}"
+cout "Ah Boi Here We Go Again....!"
 sleep 1
 clear
 cli 

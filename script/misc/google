@@ -3,27 +3,27 @@ center "Welcome"
 logo "Google-Service"
 center "Heheboi"
 echo 
-cout "\e[93;1m Googel Service.\e[0m"
-cout "\e[92;1m1]Disbale All Google Service.\e[0m"
-cout "\e[94;1m2]Disable GoogleApp Expect(playstore)\e[0m"
-cout "\e[92;1m3]Enable All Service.\e[0m"
-cout "\e[96;1m4]Enable Youtube And Chorme.\e[0m"
-cout "\e[94;1m5]Return To Main menu.\e[0m"
-cout "\e[91;1m6]Exit.\e[0m"
+cout "Googel Service."
+cout "1]Disbale All Google Service."
+cout "2]Disable GoogleApp Expect(playstore)"
+cout "3]Enable All Service."
+cout "4]Enable Youtube And Chorme."
+cout "5]Return To Main menu."
+cout "6]Exit."
 echo -e "\e[93;1m"
 read -p "Choose You Option Here >" c 
 echo -e "\e[0m"
 clear
 case $c in 
 1)
-cout "\e[93;1mAll google Will disabled Now....!\e[0m"
+cout "All google services will disabled now....!"
 mv /system/app/YouTube/YouTube.apk /system/app/YouTube/YouTube.lol > /dev/null 2>&1 
 pm disable com.android.chrome > /dev/null 2>&1
 pm disable com.android.vending > /dev/null 2>&1
 mv /system/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk /system/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.lol > /dev/null 2>&1
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
 echo 
-cout "\e[92;1mHeheboi..!\e[0m"
+cout "Heheboi..!" &
 echo 
 sleep 2
 sec=5
@@ -34,12 +34,12 @@ sleep 1
 done
 reboot ;; 
 2)
-cout "\e[92;1mDisable GoogleApp Expect(playstore)\e[0m"
+cout "Disable GoogleApps Expect(playstore)...!"
 mv /system/app/YouTube/YouTube.apk /system/app/YouTube/YouTube.lol > /dev/null 2>&1   
 pm disable com.android.chrome > /dev/null 2>&1
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
 echo
-cout "\e[92;1mHeheboi..!\e[0m"
+cout "Heheboi..!" &
 echo
 sleep 2
 sec=5
@@ -50,14 +50,14 @@ sleep 1
 done
 reboot ;;
 3)
-cout "\e[93;1mEnable All Service.\e[0m"
+cout "Enable all  Google Services."
 mv /system/app/YouTube/YouTube.lol /system/app/YouTube/YouTube.apk > /dev/null 2>&1  
 pm enable com.android.chrome > /dev/null 2>&1
 pm enable com.android.vending > /dev/null 2>&1
 mv /system/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.lol /system/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk > /dev/null 2>&1
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
 echo
-cout "\e[92;1mHeheboi..!\e[0m"
+cout "Heheboi..!"
 echo
 sleep 2
 sec=5
@@ -68,12 +68,12 @@ sleep 1
 done
 reboot ;; 
 4)
-cout "\e[96;1mEnable Youtube And Chorme.\e[0m"
+cout "Enable Youtube And Chorme."
 mv /system/app/YouTube/YouTube.lol /system/app/YouTube/YouTube.apk > /dev/null 2>&1  
 pm enable com.android.chrome > /dev/null 2>&1
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
 echo
-cout "\e[92;1mHeheboi..!\e[0m"
+cout "Heheboi..!" &
 echo 
 sleep 2
 sec=5

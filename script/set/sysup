@@ -1,4 +1,4 @@
-#!/system/bin/bash
+#!/system/bin/bash #delete
 C1="\e[31;1m"
 C2="\e[32;1m"
 C3="\e[33;1m"

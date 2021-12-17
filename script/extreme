@@ -7,7 +7,7 @@ C5="\e[35;1m"
 C6="\e[36;1m"
 CD="\e[0m"
 enable(){
-cout "${C6}[ ENABLING EXTREME MODE ]${CD}${CN}"
+cout "[ ENABLING EXTREME MODE ]"
 if [ -d /system/app/com.n0n3m4.gltools-1 ]; then
 pm clear com.n0n3m4.gltools
 elif [ -d /data/app/com.n0n3m4.gltools-1 ]; then
@@ -16,23 +16,23 @@ else
 pm disable com.android.vending > /dev/null 2>&1
 pm install -g /system/etc/security/cacerts/intel/proxy/GLTools.apk > /dev/null 2>&1 
 fi
-cout "${C2}[ CHOOSE YOUR TEMPLATE ]${CD}${CN}"
-cout "${C4} [1] MALI-G72 HYBRID (EXTREME,SMOOTHER,STABLE) ${CD}${CN}"
-cout "${C3} [2] ADRENO 650 (BEST FOR COD, NOT FOR PUBG)   ${CD}${CN}"
-cout "${C4} [3] APPLE A13 (BEST FOR PUBG KR,MOST SMOOTH FOR ALL DEVICES) ${CD}${CN}"
-cout "${C3} [4] TEGRA SHIELD 4 (MEDIUM GRAPHICS,GOOD FPS, BEST FOR NVIDIA USERS)   ${CD}${CN}"
-cout "${C4} [5] MALI T860 (LOW GRAPHICS, BETTER FOR LOW END) ${CD}${CN}"
-cout "${C3} [6] G6430 (LOWEST GRAPHICS,RECOMMENTED FOR POTATO)   ${CD}${CN}"
-cout "${C4} [7] MALI G76 (MOST STABLE FROM MALI, BETTER FOR ALL DEVICES) ${CD}${CN}"
-cout "${C3} [8] CUSTOM TEMPLATE (PUT gl.zip in ghost)   ${CD}${CN}"
-cout "${C1} [e] Exit.${CD}${CN}"
+cout "[ CHOOSE YOUR TEMPLATE ]"
+cout "[1] MALI-G72 HYBRID."
+cout "[2] ADRENO 650."
+cout "[3] APPLE A13."
+cout "[4] TEGRA SHIELD 4."
+cout "[5] MALI T860."
+cout "[6] G6430."
+cout "[7] MALI G76 (MOST STABLE FROM MALI, BETTER FOR ALL DEVICES)."
+cout "[8] CUSTOM TEMPLATE (PUT gl.zip in ghost)"
+cout "[e] Exit."
 echo -e "\e[92;1m"
 read -p "Enter your Choice :-" C 
 echo -e "\e[0m"
 clear
 case $C in
 1)
-cout "${C6}[ INJECTING FAKE-GPU... ]${CD}${CN}"
+cout "[ INJECTING FAKE-GPU... ]"
 monkey -p com.n0n3m4.gltools -c android.intent.category.LAUNCHER 1
 sleep 3
 am force-stop com.n0n3m4.gltools
@@ -52,7 +52,7 @@ find /system/app/com.n0n3m4.gltools-1 -type f -exec chmod 644 {} \;
 fi
 ;;
 2)
-cout "${C6}[ INJECTING FAKE-GPU... ]${CD}${CN}"
+cout "[ INJECTING FAKE-GPU... ]"
 monkey -p com.n0n3m4.gltools -c android.intent.category.LAUNCHER 1
 sleep 3
 am force-stop com.n0n3m4.gltools
@@ -72,7 +72,7 @@ find /system/app/com.n0n3m4.gltools-1 -type f -exec chmod 644 {} \;
 fi
 ;;
 3)
-cout "${C6}[ INJECTING FAKE-GPU... ]${CD}${CN}"
+cout "[ INJECTING FAKE-GPU... ]"
 monkey -p com.n0n3m4.gltools -c android.intent.category.LAUNCHER 1
 sleep 3
 am force-stop com.n0n3m4.gltools
@@ -92,7 +92,7 @@ find /system/app/com.n0n3m4.gltools-1 -type f -exec chmod 644 {} \;
 fi
 ;;
 4)
-cout "${C6}[ INJECTING FAKE-GPU... ]${CD}${CN}"
+cout "[ INJECTING FAKE-GPU... ]"
 monkey -p com.n0n3m4.gltools -c android.intent.category.LAUNCHER 1
 sleep 3
 am force-stop com.n0n3m4.gltools
@@ -112,7 +112,7 @@ find /system/app/com.n0n3m4.gltools-1 -type f -exec chmod 644 {} \;
 fi
 ;;
 5)
-cout "${C6}[ INJECTING FAKE-GPU... ]${CD}${CN}"
+cout "[ INJECTING FAKE-GPU... ]"
 monkey -p com.n0n3m4.gltools -c android.intent.category.LAUNCHER 1
 sleep 3
 am force-stop com.n0n3m4.gltools
@@ -132,7 +132,7 @@ find /system/app/com.n0n3m4.gltools-1 -type f -exec chmod 644 {} \;
 fi
 ;;
 6)
-cout "${C6}[ INJECTING FAKE-GPU... ]${CD}${CN}"
+cout "[ INJECTING FAKE-GPU... ]"
 monkey -p com.n0n3m4.gltools -c android.intent.category.LAUNCHER 1
 sleep 3
 am force-stop com.n0n3m4.gltools
@@ -152,7 +152,7 @@ find /system/app/com.n0n3m4.gltools-1 -type f -exec chmod 644 {} \;
 fi
 ;;
 7)
-cout "${C6}[ INJECTING FAKE-GPU... ]${CD}${CN}"
+cout "[ INJECTING FAKE-GPU... ]"
 monkey -p com.n0n3m4.gltools -c android.intent.category.LAUNCHER 1
 sleep 3
 am force-stop com.n0n3m4.gltools
@@ -172,7 +172,7 @@ find /system/app/com.n0n3m4.gltools-1 -type f -exec chmod 644 {} \;
 fi
 ;;
 8)
-cout "${C6}[ INJECTING FAKE-GPU... ]${CD}${CN}"
+cout "[ INJECTING FAKE-GPU... ]"
 monkey -p com.n0n3m4.gltools -c android.intent.category.LAUNCHER 1
 sleep 3
 am force-stop com.n0n3m4.gltools
@@ -189,7 +189,7 @@ chmod 755 uid_all.glt
 cd /data/data/com.n0n3m4.gltools/shared_prefs
 chmod 755 uid_all.xml
 else
-cout "${C4}[ Custom Temaplate not found, Ask Developer for More Info ]${CD}${CN}"
+cout "[ Custom Temaplate not found, Ask Developer for More Info ]"
 sleep 3
 fi
 if [ -d /data/app/com.n0n3m4.gltools-1 ]; then
@@ -203,13 +203,13 @@ e)
 exit 
 ;;
 *)
-cout "${C3}Wrong Input Boi....${CD}${CN}"
+cout "Wrong Input Boi....!"
 sleep 1
 clear
 enable 
 ;;
 esac
-cout "${C6}[ UPDATING LIBS ]${CD}${CN}"
+cout "[ UPDATING LIBS ]"
 if [ -e /system/lib/libEGL_orig.so ]; then
 cd /system/etc/security/cacerts/intel/proxy
 rsync -aq uninstall_gltools.zip /data/media/0/
@@ -222,7 +222,7 @@ find -type f -exec chmod 644 {} \;
 cd /system/etc/security/cacerts/intel/proxy/lib64
 rsync -aq *.so /system/lib64
 sleep 3
-cout "${C6}[ HeHe Boi ]${CD}${CN}"
+cout "HeHe Boi...!" &
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
 sec=5
 while [ $sec -ge 0 ]; do
@@ -259,7 +259,7 @@ find -type f -exec chmod 644 {} \;
 cd /system/etc/security/cacerts/intel/proxy/lib64
 rsync -aq *.so /system/lib64
 sleep 3
-cout "${C6}[ HeHe Boi ]${CD}${CN}"
+cout "HeHe Boi...!" &
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
 sec=5
 while [ $sec -ge 0 ]; do
@@ -271,7 +271,7 @@ reboot
 fi
 }
 disable(){
-cout "${C1}[ DISABLING EXTREME MODE ]${CD}${CN}"
+cout "[ DISABLING EXTREME MODE ]"
 cd /system/app
 rm -rf com.n0n3m4.gltools-1
 cd /data/media/0
@@ -298,7 +298,7 @@ find /system -type d -exec chmod 755 {} \;
 find /system/lib -type f -exec chmod 644 {} \;
 find /system/lib64 -type f -exec chmod 644 {} \;
 sleep 2
-cout "${C6}[ HeHe Boi ]${CD}${CN}"
+cout "HeHe Boi...!" &
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
 
 sec=5
@@ -313,17 +313,17 @@ cli(){
 center "Heheboi"
 logo "Extreme Mode"
 center "Welcome"
-cout "${C3}[ MADE BY SPECTRE ]${CD}${CN}"
-cout "${C4}[ THIS SCRIPT IS USED TO OPTIMIZE PUBG GRAPHICS ACCORDING TO CHOICE AND ENABLE EXTREME FPS  ]${CD}${CN}"
-cout "${C3}[ THIS SCRIPT APPLIES SYSTEMWIDE GPU PROXY FEATURED BY GLTOOLS APP, THANKS TO THE DEV ]${CD}${CN}"
-cout "${C2}[ IF YOU'RE USING A TEMPLATE WITH NO EXTREME TAG, USE GFX TOOL BY TSOML, FOR ONCE TO ENABLE 60 FPS FOREVER ]${CD}${CN}"
-cout "${C2}[ NOTE: SHOWING FPS IS DISABLED BY DEFAULT, BUT YOU CAN ENABLE IT MANUALLY VIA GLTOOLS APP AFTER ENABLING EXTREME MODE ]${CD}${CN}"
+cout "[ MADE BY SPECTRE ]"
+cout "[ THIS SCRIPT IS USED TO OPTIMIZE PUBG GRAPHICS ACCORDING TO CHOICE AND ENABLE EXTREME FPS  ]"
+cout "[ THIS SCRIPT APPLIES SYSTEMWIDE GPU PROXY FEATURED BY GLTOOLS APP, THANKS TO THE DEV ]"
+cout "[ IF YOU'RE USING A TEMPLATE WITH NO EXTREME TAG, USE GFX TOOL BY TSOML, FOR ONCE TO ENABLE 60 FPS FOREVER ]"
+cout "[ NOTE: SHOWING FPS IS DISABLED BY DEFAULT, BUT YOU CAN ENABLE IT MANUALLY VIA GLTOOLS APP AFTER ENABLING EXTREME MODE ]"
 center "[ Select the options below ]"
 echo
-cout "${C3} [1] ENABLE EXTREME MODE  ${CD}${CN}"
-cout "${C4} [2] DISABLE EXTREME MODE ${CD}${CN}"
-cout "${C5} [3] Return To Main-Menu.${CD}${CN}"
-cout "${C1} [4] Exit.${CD}${CN}"
+cout "[1] ENABLE EXTREME MODE."
+cout "[2] DISABLE EXTREME MODE."
+cout "[3] Return To Main-Menu."
+cout "[4] Exit."
 echo -e "\e[93;1m"
 read -p "Enter the Option :-" c 
 echo -e "\e[0m"
@@ -341,7 +341,7 @@ bash /system/script/menu
 4)
 exit ;;
 *)
-cout "${C3}AH boi Here We Go Again....${CD}${CN}"
+cout "AH boi Here We Go Again....!"
 sleep 1
 clear
 cli 

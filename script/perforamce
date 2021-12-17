@@ -8,7 +8,7 @@ C6="\e[36;1m"
 CD="\e[0m"
 enable()
 {
-cout "${C6}[ ENABLING PERFORMANCE GOVERNOR ]${CD}${CN}"
+cout "[ ENABLING PERFORMANCE GOVERNOR ]"
 cd /system/etc/security/cacerts/.intel/init
 rsync -aq init1 /system/etc/
 cd /system/etc
@@ -16,16 +16,16 @@ mv -f init1 init.sh
 cd /system/etc
 chmod 755 init.sh
 sleep 2
-cout "${C6}[ TWEAKING I/O SCHEDULER ]${CD}${CN}"
+cout "[ TWEAKING I/O SCHEDULER ]"
 cd /system/etc/security/cacerts/.intel/init
 rsync -aq build1 /system/
 cd /system
 mv -f build1 build.prop
 chmod 644 build.prop
 sleep 2
-cout "${C6}[ OPTIMIZING TCP CONGESTION CONTROLS ]${CD}${CN}"
+cout "[ OPTIMIZING TCP CONGESTION CONTROLS ]"
 sleep 2
-cout "${C2}[ HeHe ]${CD}${CN}"
+cout "HeHeBoi..!" &
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
 sec=5
 while [ $sec -ge 0 ]; do
@@ -37,7 +37,7 @@ reboot
 }
 disable()
 {
-cout "${C6}[ DISABLING PERFORMANCE GOVERNOR ]${CD}${CN}"
+cout "[ DISABLING PERFORMANCE GOVERNOR ]"
 cd /system/etc/security/cacerts/.intel/init
 rsync -aq init0 /system/etc/
 cd /system/etc
@@ -45,16 +45,16 @@ mv -f init0 init.sh
 cd /system/etc
 chmod 755 init.sh
 sleep 2
-cout "${C6}[ SETTING UP ORIGINAL STATE OF I/O SCHEDULER ]${CD}${CN}"
+cout "[ SETTING UP ORIGINAL STATE OF I/O SCHEDULER ]"
 cd /system/etc/security/cacerts/.intel/init
 rsync -aq build0 /system/
 cd /system
 mv -f build0 build.prop
 chmod 644 build.prop
 sleep 2
-cout "${C6}[ SETTING UP ORIGINAL STATE OF TCP CONGESTION CONTROLS ]${CD}${CN}"
+cout "[ SETTING UP ORIGINAL STATE OF TCP CONGESTION CONTROLS ]"
 sleep 2
-cout "${C2}[ HeHe Boi ]${CD}${CN}"
+cout "[ HeHe Boi ]" &
 alsa_aplay /system/etc/sounds/done.sos > /dev/null 2>&1
 sec=5
 while [ $sec -ge 0 ]; do
@@ -69,14 +69,14 @@ center "Welcome"
 logo "Performance"
 center "Heheboi"
 echo 
-cout "${C4}[ THIS SCRIPT IS MADE BY SPECTRE ]${CD}${CN}"
-cout "${C2}[ CPU GOVERNOR TWEAK ADDED BY xxDaKsHxx ]${CD}${CN}"
-cout "${C3}[ THIS SCRIPT IS USED TO OPTIMIZE OVERALL PERFORMANCE OF THE SYSTEM  ]${CD}${CN}"
-cout "${C2}[ Select the options below ]${CD}${CN}"
-cout "${C3} [1] ENABLE  ${CD}${CN}"
-cout "${C4} [2] DISABLE ${CD}${CN}"
-cout "${C5} [3] Return To Main-Menu.${CD}${CN}"
-cout "${C1} [4] Exit.${CD}${CN}"
+cout "[ THIS SCRIPT IS MADE BY SPECTRE ]"
+cout "[ CPU GOVERNOR TWEAK ADDED BY xxDaKsHxx ]"
+cout "[ THIS SCRIPT IS USED TO OPTIMIZE OVERALL PERFORMANCE OF THE SYSTEM  ]"
+cout "[ Select the options below ]"
+cout "[1] ENABLE."
+cout "[2] DISABLE."
+cout "[3] Return To Main-Menu."
+cout "[4] Exit."
 echo -e "\e[93;1m"
 read -p "Enter The Option:- " c 
 echo -e "\e[0m"
@@ -96,7 +96,7 @@ exit
 ;;
 *)
 clear
-cout "${C3}Ah Boi Here We Go Again....${CD}${CN}"
+cout "Ah Boi Here We Go Again....!"
 sleep 1
 cli
 ;;
