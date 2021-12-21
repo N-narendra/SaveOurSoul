@@ -1,4 +1,4 @@
-**Save Our Soul (sos)** 
+**Save Our Soul (sos)** **[ This Project is Raw Source You may need Build according to aspects.]**
 
 **sosv4**
 
