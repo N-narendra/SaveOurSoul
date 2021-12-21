@@ -64,7 +64,7 @@ mount_sdcard()
 }
 mount_fs(){
 mount -o rw,remount  /android/system /mnt
-mount --bind /mnt /android/SpectreRoot
+mount --bind /mnt /android/GhostRoot
 touch /mnt$SRC/heheboi.nab	 
 }
 	
